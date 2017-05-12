@@ -1,5 +1,6 @@
 $(function(){
 	initProducts();
+	
 })
 
 function initProducts(){
@@ -18,22 +19,25 @@ function initProducts(){
 				}
 			}
 			
-			for(var i=0;i<resp.length;i++)
+			for(var i=0;i<resp.length;i++){
 				$('.items').append(
-				'<li class="item"><a href="http://hust.2shoujie.com/goods/185083.html" class="img" target="_top"><img src="imgs_products/bigjianguopro.png" alt="新车只用半年 一马电动车 48v 20A"></a>'
+				'<li class="item"><a href="product_detail.jsp" class="img" target="_top"><img id="pro_img" src="'+resp[i].pimage+'" alt="'+resp[i].pdesc+'"></a>'
                     +' <div class="info">'
                         +' <div class="price">'+resp[i].salePrice+'</div>'
                         +' <div class="name"> '
-                        +' <a href="http://hust.2shoujie.com/goods/185083.html" target="_top">'+resp[i].pname+'</a>'
+                        +' <a href="product_detail.jsp" target="_top">'+resp[i].pname+'</a>'
                         +' </div>'
-                        +' <div class="department"><span>未认证用户</span></div>'
-                        +' <div class="place"><span>紫松学生公寓</span></div>'
+                        +' <div class="department"><span>原价：'+resp[i].buyPrice+'</span></div>'
+                        +' <div class="place"><span>上架时间：'+resp[i].creatTime+'</span></div>'
                         +'<div class="school"><span>'+resp[i].isHot+'</span></div>'
                         +' </div>'
                  +' </li>&nbsp' )
-                 if(resp[i].isHot=="新品"){
+                 if(resp[i].isHot=="推荐"){
  					$('.school').css("background-color","#FFB300")
  				}
+				
+				
+		 }
 		}
 	});
 }

@@ -23,47 +23,31 @@
 
     <link rel="icon" href="favicon.ico">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <script>
-    (function(){if(!/*@cc_on!@*/0)return;var e = "abbr,article,aside,audio,canvas,datalist,details,dialog,eventsource,figure,footer,header,hgroup,mark,menu,meter,nav,output,progress,section,time,video".split(','),i=e.length;while(i--){document.createElement(e[i])}})()
-    </script>
-    
+
 </head>
-<body><iframe style="position: fixed; display: none; opacity: 0;" src="index_1.html" frameborder="0"></iframe><div class="jiathis_style" style="position: absolute; z-index: 1000000000; display: none; top: 50%; left: 50%; overflow: auto;"></div><div class="jiathis_style" style="position: absolute; z-index: 1000000000; display: none; overflow: auto;"></div><iframe style="display: none;" src="index_2.html" frameborder="0"></iframe>
-    <%@ include file="common/shop_header.jsp" %>
-    <%@ include file="common/shop_left.jsp" %>
+
+<body>
+		<iframe style="position: fixed; display: none; opacity: 0;" src="index_1.html" frameborder="0"></iframe>
+		<div class="jiathis_style" style="position: absolute; z-index: 1000000000; display: none; top: 50%; left: 50%; overflow: auto;"></div>
+		<div class="jiathis_style" style="position: absolute; z-index: 1000000000; display: none; overflow: auto;"></div>
+		<iframe style="display: none;" src="index_2.html" frameborder="0"></iframe>
+
+    <%@ include file="../common/shop_header.jsp" %>
+    <%@ include file="../common/shop_left.jsp" %>
     
     <div class="container">
         <div class="main center clearfix">
             <div class="ershou-details">
                 <div class="ershou-photos-wr">
-                                        <a class="ershou-favorite" href="javascript:void(0);" style="background-image: url('heart.png');" onclick="favorites();">0</a>
-                                        <!-- 轮播大图-->
-                                        <div class="bigger-photo-box">
-										    <a class="bigger-photo hide show" rel="img_group" href="http://ershou.u.qiniudn.com/iOS_default_1493871419_107281_0?imageView2/5/w/800/h/800">
-										        <img class="bigger" src="imgs/ios_default_1493871419_107281_0" alt="出让一辆全新台铃新款电动车带正规手续，所有正规手续齐全"></a>
-										    <a class="bigger-photo hide " rel="img_group" href="http://ershou.u.qiniudn.com/iOS_default_1493871419_107281_1?imageView2/5/w/800/h/800">
-										        <img class="bigger" src="imgs/ios_default_1493871419_107281_1" alt="出让一辆全新台铃新款电动车带正规手续，所有正规手续齐全"></a>
-										    <a class="bigger-photo hide " rel="img_group" href="http://ershou.u.qiniudn.com/iOS_default_1493871439_107281_2?imageView2/5/w/800/h/800">
-										        <img class="bigger" src="imgs/ios_default_1493871439_107281_2" alt="出让一辆全新台铃新款电动车带正规手续，所有正规手续齐全"></a>
-										    <a class="bigger-photo hide " rel="img_group" href="http://ershou.u.qiniudn.com/iOS_default_1493871419_107281_3?imageView2/5/w/800/h/800">
-										        <img class="bigger" src="imgs/ios_default_1493871419_107281_3" alt="出让一辆全新台铃新款电动车带正规手续，所有正规手续齐全"></a>
-										</div>
+                         <a class="ershou-favorite" href="javascript:void(0);" style="background-image: url('heart.png');" onclick="favorites();">0</a>
+                           <!-- 轮播大图-->
+                            <div class="bigger-photo-box">
+								<a class="bigger-photo hide show" rel="img_group" href="http://ershou.u.qiniudn.com/iOS_default_1493871419_107281_0?imageView2/5/w/800/h/800">
+								<img class="bigger" src="imgs/ios_default_1493871419_107281_0" alt="出让一辆全新台铃新款电动车带正规手续，所有正规手续齐全"></a>
+										    
+							</div>
                     <!-- 轮播小图-->
-                    <div class="ershou-photo-slide">
-                                                <div class="ershou-small-photos">
-                            <img class="small cur" src="imgs/ios_default_1493871419_107281_0">
-                        </div>
-                                                <div class="ershou-small-photos">
-                            <img class="small " src="imgs/ios_default_1493871419_107281_1">
-                        </div>
-                                                <div class="ershou-small-photos">
-                            <img class="small " src="imgs/ios_default_1493871439_107281_2">
-                        </div>
-                                                <div class="ershou-small-photos">
-                            <img class="small " src="imgs/ios_default_1493871419_107281_3">
-                        </div>
-                    </div>
-                    <div class="ershou-photo-slide-layer"></div>
+                   
                 </div>
                 <div class="ershou-info">
                                         <div class="ershou-hd">
@@ -173,8 +157,8 @@
            
         </div>
     </div>
-    	<%@ include file="common/shop_right.jsp" %>
-	<%@ include file="common/shop_footer.jsp" %>
+    	<%@ include file="../common/shop_right.jsp" %>
+	<%@ include file="../common/shop_footer.jsp" %>
  <!-- 
     <footer>
         <img class="footer-tri" src="imgs/footer-tri.png">

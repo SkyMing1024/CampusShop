@@ -25,7 +25,7 @@
         <li class="category-2 catg">
             <a href="http://hust.2shoujie.com/category4" target="_top">
                 <i class="nav-icons">
-                    <img src="imgs/2.png" alt="手机"></i>
+                    <img src="${pageContext.request.contextPath}/imgs/2.png" alt="手机"></i>
                 <h3>手机</h3>
             </a>
             <div class="sub-nav">
@@ -38,7 +38,7 @@
         <li class="category-3 catg">
             <a href="http://hust.2shoujie.com/category5" target="_top">
                 <i class="nav-icons">
-                    <img src="imgs/3.png" alt="电脑"></i>
+                    <img src="${pageContext.request.contextPath}/imgs/3.png" alt="电脑"></i>
                 <h3>电脑</h3></a>
             <div class="sub-nav">
                 <span>
@@ -51,7 +51,7 @@
         <li class="category-4 catg">
             <a href="http://hust.2shoujie.com/category8" target="_top">
                 <i class="nav-icons">
-                    <img src="imgs/4.png" alt="数码配件"></i>
+                    <img src="${pageContext.request.contextPath}/imgs/4.png" alt="数码配件"></i>
                 <h3>影音娱乐</h3>
               </a>
             <div class="sub-nav">
@@ -67,7 +67,7 @@
         <li class="category-5 catg">
             <a href="http://hust.2shoujie.com/category15" target="_top">
                 <i class="nav-icons">
-                    <img src="imgs/5.png" alt="数码"></i>
+                    <img src="${pageContext.request.contextPath}/imgs/5.png" alt="数码"></i>
                 <h3>数码配件</h3></a>
             <div class="sub-nav">
                 <span>
@@ -81,7 +81,7 @@
         <li class="category-7 catg">
             <a href="http://hust.2shoujie.com/category30" target="_top">
                 <i class="nav-icons">
-                    <img src="imgs/7.png" alt="运动健身"></i>
+                    <img src="${pageContext.request.contextPath}/imgs/7.png" alt="运动健身"></i>
                 <h3>运动健身</h3></a>
             <div class="sub-nav">
                 <span>
@@ -94,7 +94,7 @@
         <li class="category-8 catg">
             <a href="http://hust.2shoujie.com/category39" target="_top">
                 <i class="nav-icons">
-                    <img src="imgs/8.png" alt="衣物伞帽"></i>
+                    <img src="${pageContext.request.contextPath}/imgs/8.png" alt="衣物伞帽"></i>
                 <h3>衣物鞋帽</h3></a>
             <div class="sub-nav">
                 <span>
@@ -110,7 +110,7 @@
         <li class="category-11 catg">
             <a href="http://hust.2shoujie.com/category71" target="_top">
                 <i class="nav-icons">
-                    <img src="imgs/11.png" alt="生活娱乐"></i>
+                    <img src="${pageContext.request.contextPath}/imgs/11.png" alt="生活娱乐"></i>
                 <h3>生活娱乐</h3></a>
             <div class="sub-nav">
                 <span>
@@ -124,7 +124,7 @@
         <li class="category-9 catg">
             <a href="http://hust.2shoujie.com/category45" target="_top">
                 <i class="nav-icons">
-                    <img src="imgs/9.png" alt="图书教材"></i>
+                    <img src="${pageContext.request.contextPath}/imgs/9.png" alt="图书教材"></i>
                 <h3>图书教材</h3></a>
             <div class="sub-nav">
                 <span>
@@ -137,7 +137,7 @@
           <li class="category-1 catg">
             <a href="http://hust.2shoujie.com/category1" target="_top">
                 <i class="nav-icons">
-                    <img src="imgs/1.png" alt="校园代步"></i>
+                    <img src="${pageContext.request.contextPath}/imgs/1.png" alt="校园代步"></i>
                 <h3>交通出行</h3>
             </a>
             <div class="sub-nav">
@@ -153,7 +153,7 @@
         <li class="category-6 catg">
             <a href="http://hust.2shoujie.com/category23" target="_top">
                 <i class="nav-icons">
-                    <img src="imgs/6.png" alt="电器"></i>
+                    <img src="${pageContext.request.contextPath}/imgs/6.png" alt="电器"></i>
                 <h3>个人技能</h3></a>
             <div class="sub-nav">
                 <span>
@@ -165,7 +165,7 @@
         <li class="category-12 catg">
             <a href="http://hust.2shoujie.com/category999" target="_top">
                 <i class="nav-icons">
-                    <img src="imgs/12.png" alt="其他"></i>
+                    <img src="${pageContext.request.contextPath}/imgs/12.png" alt="其他"></i>
                 <h3>其他</h3>
            </a>
         </li>

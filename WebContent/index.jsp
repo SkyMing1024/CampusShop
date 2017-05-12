@@ -9,13 +9,15 @@
 
     <title>武科大步行街-WUSTER专属二手物品交易平台</title>
 
-    <link media="all" href="css/index.css" type="text/css" rel="stylesheet">
-    <script  src="js/jquery-3.1.1.min.js"></script>
+    <link media="all" href="${pageContext.request.contextPath}/css/index.css" type="text/css" rel="stylesheet">
+    <script  src="${pageContext.request.contextPath}/js/jquery-3.1.1.min.js"></script>
+    
      <script src="index.js"></script> 
-    <script src="js/add.js"></script>
-    <script src="js/hm.js"></script>
-    <script src="js/common.js"></script>
-    <script src="js/common_001.js"></script>
+     
+    <script src="${pageContext.request.contextPath}/js/add.js"></script>
+    <script src="${pageContext.request.contextPath}/js/hm.js"></script>
+    <script src="${pageContext.request.contextPath}/js/common.js"></script>
+    <script src="${pageContext.request.contextPath}/js/common_001.js"></script>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 	
     
@@ -23,8 +25,8 @@
 </head>
 
 <body>
-  <%@ include file="common/shop_header.jsp" %>
-	<%@ include file="common/shop_left.jsp" %> 
+  <%@ include file="../common/shop_header.jsp" %>
+	<%@ include file="../common/shop_left.jsp" %> 
 	
 	
     <div class="container">
@@ -102,7 +104,7 @@
 <div class="return-to-top"><a href="#"></a></div><!--返回顶部-->
     
 	
- 	<%@ include file="common/shop_right.jsp" %>
-	<%@ include file="common/shop_footer.jsp" %> 
+ 	<%@ include file="../common/shop_right.jsp" %>
+	<%@ include file="../common/shop_footer.jsp" %> 
 	
 </html>

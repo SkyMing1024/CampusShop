@@ -1,7 +1,5 @@
 package indi.mt.shop.test;
 
-import static org.junit.Assert.*;
-
 import java.sql.Connection;
 import java.util.List;
 
@@ -11,14 +9,26 @@ import org.apache.commons.dbutils.handlers.BeanListHandler;
 import indi.mt.shop.dao.WantInfoDao;
 import indi.mt.shop.daoimpl.AdminDaoImpl;
 import indi.mt.shop.daoimpl.ProductDaoImpl;
+import indi.mt.shop.daoimpl.ProductWithUserInfoDaoImpl;
 import indi.mt.shop.daoimpl.UserDaoImpl;
 import indi.mt.shop.daoimpl.WantInfoDaoImpl;
 import indi.mt.shop.domain.Product;
-import indi.mt.shop.domain.WantInfo;
+import indi.mt.shop.domain.ProductWithUserInfo;
 import indi.mt.shop.utils.JDBCTools;
 
 
 public class Test {
+	
+	
+	@org.junit.Test
+	public void testGetProductWithUserInfo(){
+		ProductWithUserInfoDaoImpl piml = new ProductWithUserInfoDaoImpl();
+		Product p = new Product();
+		p=piml.getProductWithUserInfo(5);
+		
+		System.out.println(piml.getProductWithUserInfoList());
+		
+	}
 	
 	
 	@org.junit.Test
