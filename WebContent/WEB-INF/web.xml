@@ -14,4 +14,24 @@
     <servlet-name>TestServlet</servlet-name>
     <url-pattern>/testServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>NewProServlet</display-name>
+    <servlet-name>NewProServlet</servlet-name>
+    <servlet-class>indi.mt.shop.test.NewProServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>NewProServlet</servlet-name>
+    <url-pattern>/newProServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ProductListServlet</display-name>
+    <servlet-name>ProductListServlet</servlet-name>
+    <servlet-class>indi.mt.shop.controller.ProductListServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ProductListServlet</servlet-name>
+    <url-pattern>/productListServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

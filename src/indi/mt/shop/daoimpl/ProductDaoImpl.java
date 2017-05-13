@@ -16,7 +16,7 @@ public class ProductDaoImpl extends BaseDao<Product> implements ProductDao{
 		return query(sql, pid);
 	}
 	
-	//获取在售商品，state=1，表示在售
+	//获取全部在售商品，state=1，表示在售
 	@Override
 	public List<Product> getProductsOnsale() {
 		String sql ="SELECT products.pid,products.pname,products.buy_price buyPrice,products.sale_price salePrice,products.pdesc,products.pimage, " 
@@ -26,12 +26,12 @@ public class ProductDaoImpl extends BaseDao<Product> implements ProductDao{
 	}
 	
 	
-	//获取新品
+	//获取在售新品（12个）
 	@Override
 	public List<Product> getProductsNew() {
 		String sql ="SELECT products.pid,products.pname,products.buy_price buyPrice,products.sale_price salePrice,products.pdesc,products.pimage, " 
 				+" products.beloneto,products.cid2,products.read_times readTimes,products.state,products.isHot,products.creat_time creatTime "
-				+" FROM products  ORDER BY creat_time desc LIMIT 12";
+				+" FROM products where state=1 ORDER BY creat_time desc LIMIT 12";
 		return queryList(sql);
 	}
 

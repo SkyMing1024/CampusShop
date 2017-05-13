@@ -19,6 +19,14 @@ import indi.mt.shop.utils.JDBCTools;
 
 public class Test {
 	
+	@org.junit.Test
+	public void testGetProduct(){
+		ProductDaoImpl productDaoImpl = new ProductDaoImpl();
+		
+		
+		System.out.println(productDaoImpl.getProductsNew());
+		
+	}
 	
 	@org.junit.Test
 	public void testGetProductWithUserInfo(){

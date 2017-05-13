@@ -12,7 +12,7 @@
     <link media="all" href="${pageContext.request.contextPath}/css/index.css" type="text/css" rel="stylesheet">
     <script  src="${pageContext.request.contextPath}/js/jquery-3.1.1.min.js"></script>
     
-     <script src="webapp_js/index.js"></script> 
+     <script src="webapp_js/product_list.js"></script> 
      
     <script src="${pageContext.request.contextPath}/js/add.js"></script>
     <script src="${pageContext.request.contextPath}/js/hm.js"></script>
@@ -31,13 +31,6 @@
 	
     <div class="container">
    		<div class="main center">
-                <div class="wrap-site mt20">
-            <div class="recom-title"></div>
-            <ul class="recom-list group">
-                <li><a href="http://www.2shoujie.com/publishRule" target="_top">商品发布规则</a></li>
-                                <li><a href="http://www.2shoujie.com/article/4.html" target="_top">购买二手iPhone注意事项</a></li>
-            </ul>
-        </div>
         <div class="label-wr center clearfix">
             <div id="nav-labels">
                 <button id="new_pro" class="labels" onclick="" ></button>

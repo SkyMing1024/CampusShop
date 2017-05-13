@@ -21,7 +21,7 @@ public class TestDao {
 				System.out.println("connnection连接:"+connection);
 				String sql="SELECT products.pid, products.pname,products.buy_price buyPrice,products.sale_price salePrice,products.pdesc, "
 							+ "products.pimage,products.beloneto,products.cid2,products.read_times readTimes,products.isHot,"
-							+ "products.creat_time creatTime FROM products ORDER BY creat_time DESC";
+							+ "products.creat_time creatTime FROM products ORDER BY creat_time ";
 				List<TestProduct> list = queryRunner.query(connection, sql, new BeanListHandler<TestProduct>(TestProduct.class));
 				return list;
 			} catch (Exception e) {

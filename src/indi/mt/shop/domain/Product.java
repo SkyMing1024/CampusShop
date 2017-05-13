@@ -13,9 +13,9 @@ public class Product {
 	private String beloneto;
 	private int cid2;
 	private int readTimes;
-	private boolean state;
-	private boolean isHot;
-	private java.sql.Date creatTime;
+	private String state;
+	private String isHot;
+	private String creatTime;
 	public String getPid() {
 		return pid;
 	}
@@ -64,36 +64,35 @@ public class Product {
 	public void setCid2(int cid2) {
 		this.cid2 = cid2;
 	}
-	public int getRead_times() {
+	public int getReadTimes() {
 		return readTimes;
 	}
-	public void setRead_times(int read_times) {
-		this.readTimes = read_times;
+	public void setReadTimes(int readTimes) {
+		this.readTimes = readTimes;
 	}
-	public boolean isState() {
+	public String getState() {
 		return state;
 	}
-	public void setState(boolean state) {
+	public void setState(String state) {
 		this.state = state;
 	}
-	public boolean isHot() {
+	public String getIsHot() {
 		return isHot;
 	}
-	public void setHot(boolean isHot) {
+	public void setIsHot(String isHot) {
 		this.isHot = isHot;
 	}
-	public  Date getCreatTime() {
+	public String getCreatTime() {
 		return creatTime;
 	}
-	public void setCreatTime(Date creatTime) {
+	public void setCreatTime(String creatTime) {
 		this.creatTime = creatTime;
 	}
 	
 	public Product() {
-
 	}
 	public Product(String pid, String pname, double buyPrice, double salePrice, String pdesc, String pimage,
-			String beloneto, int cid2, int readTimes, boolean state, boolean isHot, Date creatTime) {
+			String beloneto, int cid2, int readTimes, String state, String isHot, String creatTime) {
 		super();
 		this.pid = pid;
 		this.pname = pname;
@@ -115,6 +114,9 @@ public class Product {
 				+ ", readTimes=" + readTimes + ", state=" + state + ", isHot=" + isHot + ", creatTime=" + creatTime
 				+ "]\n";
 	}
+	
+
+
 	
 	
 	

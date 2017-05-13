@@ -68,8 +68,10 @@ public class ProductWithUserInfo extends Product {
 		// TODO Auto-generated constructor stub
 	}
 
+	
+
 	public ProductWithUserInfo(String pid, String pname, double buyPrice, double salePrice, String pdesc, String pimage,
-			String beloneto, int cid2, int readTimes, boolean state, boolean isHot, Date creatTime) {
+			String beloneto, int cid2, int readTimes, String state, String isHot, String creatTime) {
 		super(pid, pname, buyPrice, salePrice, pdesc, pimage, beloneto, cid2, readTimes, state, isHot, creatTime);
 		// TODO Auto-generated constructor stub
 	}
