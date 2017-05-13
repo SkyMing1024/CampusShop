@@ -21,20 +21,31 @@ public class ProductListServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		int urlCatVal = Integer.parseInt(request.getParameter("cat"));
-		String urlSearchKeyword = request.getParameter("searchKeyword");
-		System.out.println(urlCatVal);
-		System.out.println(urlSearchKeyword);
-		
-		
 		List<Product> list = new ArrayList<>();
 		
-		list = 	new ProductService().getProductListByCat(urlCatVal);
+		String urlValCat = request.getParameter("cat");
+		String urlValRank = request.getParameter("rank");
+		System.out.println(urlValCat);
+		System.out.println(urlValRank);
+		
+		if ((urlValCat!=""&&!urlValCat.equals("")&&!"null".equals(urlValCat)||(urlValRank == ""&&urlValRank.equals("")&&"null".equals(urlValRank)))) {
+			int cid=Integer.parseInt(urlValCat);
+			if(cid == 0){
+				list = new ProductService().getProductsAllOnsale();
+			}else {
+				list = 	new ProductService().getProductListByCat(cid);
+			}
+		}
+		if ((urlValCat==""&&urlValCat.equals("")&&"null".equals(urlValCat)||(urlValRank != ""&&!urlValRank.equals("")&&!"null".equals(urlValRank)))) {
+			
+			list = new ProductService().getProductsListOrder(urlValRank);
+		}
 		
 		
 		Gson gson = new Gson();
 		String json = gson.toJson(list);
+		System.out.println(list);
+		
 		response.setCharacterEncoding("utf-8");
 		response.setContentType("application/json;charset=utf-8");
 		response.getWriter().write(json);

@@ -6,15 +6,20 @@ function getUrlParam(name) {
         }
 var urlValCat = getUrlParam('cat');
 
+var urlValRank = getUrlParam('rank')
+
 var urlSearchKeyword = $("#keyword").val();
 
-var url ="productListServlet";
+
+
+
+//alert('当前页面url参数:'+window.location)
 
 //var url ="productListServlet?cat="+urlValCat+"&searchKey=a";
 //var url ="productListServlet?cat="+urlValCat;
 
 
-
+var url ="productListServlet";
 $(function(){
 	initProducts();
 	
@@ -25,16 +30,10 @@ function initProducts(){
 		type:"POST",
 		url:url,
 		dataType:"json",
-		data:{"cat":urlValCat,searchKeyword:urlSearchKeyword},
+		data:{"cat":urlValCat,'rank':urlValRank},
 		success:function(resp){
 			var list;
-			for(var i=0;i<resp.length;i++){
-				if(resp[i].isHot=="1"){
-					resp[i].isHot="推荐";
-				}else{
-					resp[i].isHot="新品";
-				}
-			}
+			
 			
 			for(var i=0;i<resp.length;i++){
 				$('.items').append(
@@ -46,12 +45,8 @@ function initProducts(){
                         +' </div>'
                         +' <div class="department"><span>原价：'+resp[i].buyPrice+'</span></div>'
                         +' <div class="place"><span>上架时间：'+resp[i].creatTime+'</span></div>'
-                        +'<div class="school"><span>'+resp[i].isHot+'</span></div>'
                         +' </div>'
                  +' </li>&nbsp' )
-                 if(resp[i].isHot=="推荐"){
- 					$('.school').css("background-color","#FFB300")
- 				}
 				
 				
 		 }

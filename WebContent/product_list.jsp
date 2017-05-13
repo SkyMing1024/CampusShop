@@ -30,71 +30,54 @@
 	
 	
     <div class="container">
-   		<div class="main center">
-        <div class="label-wr center clearfix">
-            <div id="nav-labels">
-                <button id="new_pro" class="labels" onclick="" ></button>
+        <div class="main center">
+            <div class="rank-by clearfix cur1" data-cur="1">
+                <div class="rank-title-wr">
+                    <a href="${pageContext.request.contextPath}/product_list.jsp?rank=time">
+                        <div class="rank-title default" data-rank="1">时间</div>
+                    </a>
+                    <a href="${pageContext.request.contextPath}/product_list.jsp?rank=point">
+                        <div class="rank-title cred" data-rank="3">信用</div>
+                    </a>
+                    <a class="pr rank-title-price" href="${pageContext.request.contextPath}/product_list.jsp?rank=price">
+                        <div class="rank-title pri " data-rank="4">价格</div>
+                                                <span id="up_down" order="nor" class="price-nor"></span>
+                     </a>
+                    <a href="${pageContext.request.contextPath}/product_list.jsp?rank=readTimes">
+                        <div class="rank-title hot" data-rank="5">热度</div>
+                    </a>
+                </div>
+                <div class="wave ease2"></div>
             </div>
-           
-        </div>
-        
-        <div class="item-list">
-            <ul class="items clearfix">
-            
-            
-             <!-- <c:forEach items="${list}" var="pros"> 
-            	<li class="item">
-                    <a href="#" class="img" target="_top"><img src="${pros.pimage }" alt="${pros.pname }"></a>
-                    <div class="info">
-                        <div class="price">"${pros.salePrice }"</div>
-                        <div class="name">
-                            <a href="http://hust.2shoujie.com/goods/169685.html" >"${pros.pname }"</a>
+            <div class="item-list">
+                <ul class="items clearfix">
+                      
+                  <!--    <li class="item">
+                        <a href="http://hust.2shoujie.com/goods/185614.html" class="img" target="_top"><img src="ios_default_1494065510_107750_0" alt="美利达勇士600山地自行车低价转让"></a>
+                        <div class="info">
+                            <div class="price">400</div>
+                            <div class="name"><a href="http://hust.2shoujie.com/goods/185614.html" target="_top">美利达勇士600山地自行车低价转让</a></div>
+                            <div class="department"><span>研究生14级(未认证)</span></div>
+                            <div class="place"><span>全校</span></div>
                         </div>
-                        <div class="department"><span>"${pros.cid2 }"</span></div>
-                        <div class="school"><span>推荐</span></div>
-                     </div>
-                </li>
-            </c:forEach> -->
-            
-            
-             <!--  <li class="item fixed"></li>
-                <li class="item fixed"></li>
-                <li class="item fixed"></li>
-                <li class="item fixed"></li>
-                 
-                     <li class="item">
-                    <a href="http://hust.2shoujie.com/goods/169685.html" class="img" target="_top"><img src="ios_default_1455711227_71_0" alt="MacbookPro 13寸 12年版"></a>
-                    <div class="info">
-                        <div class="price">3500</div>
-                        <div class="name">
-                            <a href="http://hust.2shoujie.com/goods/169685.html" target="_top">MacbookPro 13寸 12年版</a>
-                        </div>
-                        <div class="department"><span>计算机12级(学号认证)</span></div>
-                        <div class="place"><span>华科</span></div>
-                        <div class="school"><span>推荐</span></div>
-                     </div>
-                </li>
-               -->
-                                
-              
-            </ul>
+                    </li>
+                  -->
+                                       
+                </ul>
+            </div>
+            <div class="pages">
+                                <a class="page-num cur" href="http://hust.2shoujie.com/category1/time/pn1">1</a>
+                                <a class="page-num " href="http://hust.2shoujie.com/category1/time/pn2">2</a>
+                                <a class="page-num " href="http://hust.2shoujie.com/category1/time/pn3">3</a>
+                                <a class="page-num " href="http://hust.2shoujie.com/category1/time/pn4">4</a>
+                                <a class="page-num " href="http://hust.2shoujie.com/category1/time/pn5">5</a>
+                                <a class="page-num " href="http://hust.2shoujie.com/category1/time/pn6">6</a>
+                                <a class="page-num " href="http://hust.2shoujie.com/category1/time/pn7">7</a>
+                                <a class="page-num " href="http://hust.2shoujie.com/category1/time/pn8">8</a>
+                                <a class="page-arrow arrow-right" href="http://hust.2shoujie.com/category1/time/pn2">下一页</a>
+           </div>
         </div>
-        <!-- 分页 开始 -->
-        <div class="pages">
-                        <a class="page-num cur" href="http://hust.2shoujie.com/recent">1</a>
-                        <a class="page-num " href="http://hust.2shoujie.com/recent/pn2">2</a>
-                        <a class="page-num " href="http://hust.2shoujie.com/recent/pn3">3</a>
-                        <a class="page-num " href="http://hust.2shoujie.com/recent/pn4">4</a>
-                        <a class="page-num " href="http://hust.2shoujie.com/recent/pn5">5</a>
-                        <a class="page-num " href="http://hust.2shoujie.com/recent/pn6">6</a>
-                        <a class="page-num " href="http://hust.2shoujie.com/recent/pn7">7</a>
-                        <a class="page-num " href="http://hust.2shoujie.com/recent/pn8">8</a>
-                        <a class="page-arrow arrow-right" href="http://hust.2shoujie.com/recent/pn2">下一页</a>
-        </div>
-        <!-- 分页 结束 -->
     </div>
-</div>
-<!--href=“http://hust.2shoujie.com/”-->
 <div class="return-to-top"><a href="#"></a></div><!--返回顶部-->
     
 	

@@ -6,20 +6,46 @@ import indi.mt.shop.domain.Product;
 
 public interface ProductDao {
 	
+	
+	//根据pid查询单个商品
 	Product getProductById(int pid);
 	
+	//查询全部在售商品
 	List<Product> getProductsOnsale();
 	
+	//查询在售新品（12个）
 	List<Product> getProductsNew();
+	
+	//按时间查询所有商品
+	List<Product> getProductsOrderByTime(); 
+	//按时间查询所有在售商品
+	List<Product> getProductsOnsaleOrderByTime();
+	
+	//按价格查询所有商品
+	List<Product> getProductsOrderByPrice();
+	//按价格查询所有在售商品
+	List<Product> getProductsOnsaleOrderByPrice();
+
+	//按热度查询所有商品
+	List<Product> getProductsOrderByReadTimes();
+	//按热度查询所有在售商品
+	List<Product> getProductsOnsaleOrderByReadTimes();
+	
+	List<Product> getProductsByUserPoints();
+	
+	List<Product> getProductsOnsaleByUserPoints();
+	
 	
 	//cat1,商品大类
 	List<Product> getProductsByCat1(int cat1);
 	
 	//cat2,商品小类
 	List<Product> getProductsByCat2(int cat2);
-
+	
+	//查询全部商品
 	List<Product> getProductsAll();
 	
+	//查询全部商品总数
 	long getProductSum();
 	
 	//新增商品

@@ -21,7 +21,15 @@
         <li class="blank-head">
             <a href="javascript:;"></a>
         </li>
-      
+      	
+      	<li class="category-12 catg">
+            <a href="${pageContext.request.contextPath}/product_list.jsp?cat=0" target="_top">
+                <i class="nav-icons">
+                    <img src="${pageContext.request.contextPath}/imgs/12.png" alt="全部商品"></i>
+                <h3>全部商品</h3>
+           </a>
+        </li>
+      	
         <li class="category-2 catg">
             <a href="${pageContext.request.contextPath}/product_list.jsp?cat=1" target="_top">
                 <i class="nav-icons">
@@ -165,7 +173,7 @@
         <li class="category-12 catg">
             <a href="${pageContext.request.contextPath}/product_list.jsp?cat=11" target="_top">
                 <i class="nav-icons">
-                    <img src="${pageContext.request.contextPath}/imgs/1101.png" alt="其他"></i>
+                    <img src="${pageContext.request.contextPath}/imgs/12.png" alt="其他"></i>
                 <h3>其他</h3>
            </a>
         </li>

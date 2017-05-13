@@ -7,7 +7,9 @@ import indi.mt.shop.dao.ProductDao;
 import indi.mt.shop.domain.Product;
 
 public class ProductDaoImpl extends BaseDao<Product> implements ProductDao{
-
+	
+	
+	
 	@Override
 	public Product getProductById(int pid) {
 		String sql ="SELECT products.pid,products.pname,products.buy_price buyPrice,products.sale_price salePrice,products.pdesc,products.pimage, " 
@@ -26,7 +28,7 @@ public class ProductDaoImpl extends BaseDao<Product> implements ProductDao{
 	}
 	
 	
-	//获取在售新品（12个）
+	//查询在售新品（12个）
 	@Override
 	public List<Product> getProductsNew() {
 		String sql ="SELECT products.pid,products.pname,products.buy_price buyPrice,products.sale_price salePrice,products.pdesc,products.pimage, " 
@@ -98,6 +100,72 @@ public class ProductDaoImpl extends BaseDao<Product> implements ProductDao{
 		String sql="update products set pname=?,buy_price=? ,sale_price=?,"
 				+ " pdesc=?,pimage=? WHERE pid=?";
 		update(sql, product.getPname(),product.getBuyPrice(),product.getSalePrice(),product.getPdesc(),product.getPimage(),product.getPid());
+	}
+
+	@Override
+	public List<Product> getProductsOrderByTime() {
+		String sql="SELECT p.pid,p.pname,p.buy_price buyPrice,p.sale_price salePrice,p.pdesc,p.pimage, "
+					+" p.beloneto,p.cid2,p.read_times readTimes,p.state,p.isHot,p.creat_time creatTime "
+					+" FROM products p ORDER BY creat_time desc";
+		return queryList(sql);
+	}
+
+	@Override
+	public List<Product> getProductsOnsaleOrderByTime() {
+		String sql="SELECT p.pid,p.pname,p.buy_price buyPrice,p.sale_price salePrice,p.pdesc,p.pimage, "
+				+" p.beloneto,p.cid2,p.read_times readTimes,p.state,p.isHot,p.creat_time creatTime "
+				+" FROM products p WHERE p.state=1 ORDER BY creat_time desc";
+	return queryList(sql);
+	}
+
+	@Override
+	public List<Product> getProductsOrderByPrice() {
+		String sql="SELECT p.pid,p.pname,p.buy_price buyPrice,p.sale_price salePrice,p.pdesc,p.pimage, "
+				+" p.beloneto,p.cid2,p.read_times readTimes,p.state,p.isHot,p.creat_time creatTime "
+				+" FROM products p  ORDER BY sale_price desc";
+	return queryList(sql);
+	}
+
+	@Override
+	public List<Product> getProductsOnsaleOrderByPrice() {
+		String sql="SELECT p.pid,p.pname,p.buy_price buyPrice,p.sale_price salePrice,p.pdesc,p.pimage, "
+				+" p.beloneto,p.cid2,p.read_times readTimes,p.state,p.isHot,p.creat_time creatTime "
+				+" FROM products p WHERE p.state=1 ORDER BY sale_price desc";
+	return queryList(sql);
+	}
+
+	@Override
+	public List<Product> getProductsOrderByReadTimes() {
+		String sql="SELECT p.pid,p.pname,p.buy_price buyPrice,p.sale_price salePrice,p.pdesc,p.pimage, "
+				+" p.beloneto,p.cid2,p.read_times readTimes,p.state,p.isHot,p.creat_time creatTime "
+				+" FROM products p  ORDER BY read_times desc";
+		return queryList(sql);
+	}
+
+	@Override
+	public List<Product> getProductsOnsaleOrderByReadTimes() {
+		String sql="SELECT p.pid,p.pname,p.buy_price buyPrice,p.sale_price salePrice,p.pdesc,p.pimage, "
+				+" p.beloneto,p.cid2,p.read_times readTimes,p.state,p.isHot,p.creat_time creatTime "
+				+" FROM products p WHERE p.state=1 ORDER BY read_times desc";
+		return queryList(sql);
+	}
+
+	@Override
+	public List<Product> getProductsByUserPoints() {
+		String sql="SELECT p.pid,p.pname,p.buy_price buyPrice,p.sale_price salePrice,p.pdesc,p.pimage, "
+				+ " p.beloneto,p.cid2,p.read_times readTimes,p.state,p.isHot,p.creat_time creatTime"
+				+ " FROM products  p INNER JOIN `user`  u ON p.beloneto = u.id "
+				+ " ORDER BY u.point DESC";
+		return queryList(sql);
+	}
+
+	@Override
+	public List<Product> getProductsOnsaleByUserPoints() {
+		String sql="SELECT p.pid,p.pname,p.buy_price buyPrice,p.sale_price salePrice,p.pdesc,p.pimage, "
+				+ " p.beloneto,p.cid2,p.read_times readTimes,p.state,p.isHot,p.creat_time creatTime"
+				+ " FROM products  p INNER JOIN `user`  u ON p.beloneto = u.id "
+				+ " WHERE p.state = 1 ORDER BY u.point DESC";
+		return queryList(sql);
 	}
 	
 	

@@ -23,7 +23,7 @@ public class NewProServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		List<Product> list = null;
 		try {
-			list=new ProductDaoImpl().getProductsNew();
+			list=new ProductDaoImpl().getProductsAll();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
