@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.google.gson.Gson;
 
 import indi.mt.shop.domain.Product;
-import indi.mt.shop.service.ProductService;
+import indi.mt.shop.service.ProductListService;
 
 /**
  * Servlet implementation class ProductListServlet
@@ -31,15 +31,20 @@ public class ProductListServlet extends HttpServlet {
 		if ((urlValCat!=""&&!urlValCat.equals("")&&!"null".equals(urlValCat)||(urlValRank == ""&&urlValRank.equals("")&&"null".equals(urlValRank)))) {
 			int cid=Integer.parseInt(urlValCat);
 			if(cid == 0){
-				list = new ProductService().getProductsAllOnsale();
+				list = new ProductListService().getProductsAllOnsale();
 			}else {
-				list = 	new ProductService().getProductListByCat(cid);
+				list = 	new ProductListService().getProductListByCat(cid);
 			}
 		}
 		if ((urlValCat==""&&urlValCat.equals("")&&"null".equals(urlValCat)||(urlValRank != ""&&!urlValRank.equals("")&&!"null".equals(urlValRank)))) {
 			
-			list = new ProductService().getProductsListOrder(urlValRank);
+			list = new ProductListService().getProductsListOrder(urlValRank);
 		}
+//		if ((urlValCat==""&&urlValCat.equals("")&&"null".equals(urlValCat)||(urlValRank == ""&&urlValRank.equals("")&&"null".equals(urlValRank)))) {
+//			
+//			list = new ProductListService().getProductsAllOnsale();
+//			
+//		}
 		
 		
 		Gson gson = new Gson();
@@ -56,7 +61,6 @@ public class ProductListServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
 

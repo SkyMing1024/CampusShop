@@ -47,8 +47,6 @@ function initProducts(){
                         +' <div class="place"><span>上架时间：'+resp[i].creatTime+'</span></div>'
                         +' </div>'
                  +' </li>&nbsp' )
-				
-				
 		 }
 		}
 	});

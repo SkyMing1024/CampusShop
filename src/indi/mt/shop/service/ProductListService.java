@@ -4,11 +4,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 import indi.mt.shop.daoimpl.ProductDaoImpl;
+import indi.mt.shop.daoimpl.ProductWithUserInfoDaoImpl;
 import indi.mt.shop.domain.Product;
+import indi.mt.shop.domain.ProductWithUserInfo;
 
-public class ProductService {
+public class ProductListService {
 	
 	static ProductDaoImpl productDaoImpl = new ProductDaoImpl();
+	
+	static ProductWithUserInfoDaoImpl productWithUserInfoDaoImpl= new ProductWithUserInfoDaoImpl();
+	
+	public ProductWithUserInfo getProductWithUserInfoById(int pid){
+		
+		
+		return null;
+	}
 	
 	public List<Product> getProductListBySearchKeyword(String keywor){
 		List<Product> list = new ArrayList<>();

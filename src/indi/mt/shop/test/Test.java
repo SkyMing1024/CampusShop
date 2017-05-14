@@ -28,10 +28,11 @@ public class Test {
 	@org.junit.Test
 	public void testGetProductWithUserInfo(){
 		ProductWithUserInfoDaoImpl piml = new ProductWithUserInfoDaoImpl();
-		Product p = new Product();
+		ProductWithUserInfo p = new ProductWithUserInfo();
 		p=piml.getProductWithUserInfo(5);
 		
-		System.out.println(piml.getProductWithUserInfoList());
+		System.out.println(p);
+		System.out.println(p.getPdesc());
 		
 	}
 	
