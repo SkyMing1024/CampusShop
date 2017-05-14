@@ -6,6 +6,12 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 
+<style>
+.loginandrigist {
+    margin-left: 1000px;
+    margin-top: -66px;
+}
+</style>
 
 </head>
 <body>
@@ -20,8 +26,8 @@
 	            <img src="imgs/2shoujie_web_title.png" alt="wuster专属校园二手物品交易平台">
 	        </a>
 	        <div class="search-box-wr ease2">
-	            <form class="search-box center" action="productListServlet" method="get">
-	                <button type="submit" class="search-submit"><a color: rgb(255,255,255) href="${pageContext.request.contextPath}/product_list.jsp">搜索</a></button>
+	            <form class="search-box center" action="productSearchServlet" method="post">
+	                <button type="submit" class="search-submit"></button>
 	                <div class="input-wr">
 	                    <img class="search-icon" src="imgs/search-icon.png">
 	                    <div class="search-input">
@@ -39,11 +45,21 @@
 	            </div>
 	        </div>
 
-	        <div class="log-reg ease2">
-	            <div class="button" data-type="l">登录</div>
-	            <div class="button" data-type="r">注册</div>
+	        <div class="ease2 loginandrigist">
+	       
+	            <div class="button" ><a href="login.jsp">登录</a></div>
+	            <div class="button" ><a href="login.jsp?a=0">注册</a></div>
 	        </div>
 	    </div>
 	</header>
 </body>
+
+<script>
+
+	
+	
+
+</script>
+
+
 </html>

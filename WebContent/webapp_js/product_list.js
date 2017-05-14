@@ -8,8 +8,7 @@ var urlValCat = getUrlParam('cat');
 
 var urlValRank = getUrlParam('rank')
 
-var urlSearchKeyword = $("#keyword").val();
-
+var url ="productListServlet";
 
 
 
@@ -18,13 +17,15 @@ var urlSearchKeyword = $("#keyword").val();
 //var url ="productListServlet?cat="+urlValCat+"&searchKey=a";
 //var url ="productListServlet?cat="+urlValCat;
 
-
-var url ="productListServlet";
 $(function(){
+//	alert("urlValCat:"+typeof urlValCat+"\n"+"urlValRank:"+urlValRank)
+//	if(urlValRank!=null||urlValCat==1){
+//		initProducts();
+//	}else{
+//		alert("test")
+//	}
 	initProducts();
-	
 })
-
 function initProducts(){
 	$.ajax({
 		type:"POST",
@@ -33,8 +34,6 @@ function initProducts(){
 		data:{"cat":urlValCat,'rank':urlValRank},
 		success:function(resp){
 			var list;
-			
-			
 			for(var i=0;i<resp.length;i++){
 				$('.items').append(
 				'<li class="item"><a href="product_detail.jsp?pid='+resp[i].pid+'" class="img" target="_top"><img id="pro_img" src="'+resp[i].pimage+'" alt="'+resp[i].pdesc+'"></a>'

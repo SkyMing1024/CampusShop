@@ -123,7 +123,7 @@
 		   <div class="login-wr">
 		    <div class="login-header">
 		     <img class="login-logo" src="imgs/logo.png" alt="logo" />
-		     <p class="site-name">校园二手街</p>
+		     <p class="site-name">武科大步行街wust</p>
 		     <div class="share-buttons" style="display: none;">
 		      <div id="renren-button">
 		       人人网登陆

@@ -1,4 +1,4 @@
-package indi.mt.shop.controller;
+package indi.mt.shop.servlet;
 
 import java.io.IOException;
 import java.util.ArrayList;

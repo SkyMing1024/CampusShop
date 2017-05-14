@@ -187,11 +187,14 @@ div.comment .avatar::before, .post-comment .avatar::before { content: ""; displa
 .want-list .want-attr { color: rgb(133, 141, 142); font-size: 12px; margin-top: 18px; height: 16px; line-height: 16px; }
 .want-list .want-price { font-size: 16px; color: rgb(237, 78, 81); margin-left: 10px; }
 .want-list .want-price, .want-list .want-add { margin-right: 30px; }
+
 .want-list .want-contact { margin-top: 14px; font-size: 14px; height: 18px; }
 .want-list .want-contact > span { display: inline-block; }
+.want-list .want-cont { color: rgb(75, 191, 165); padding-left: 81px; height: 18px; background-image: url('../imgs/want_contact.png'); 
+background-repeat: no-repeat; background-position: left 1px; cursor: pointer; margin-left: 15px; }
+
 .want-list .want-person { color: rgb(133, 141, 142); display: inline-block; font-size: 14px; padding-left: 20px; background: transparent url('../imgs/ico-per.png') no-repeat scroll left center; margin-right: 10px; height: 18px; line-height: 18px; float: left; }
 .want-list .want-person:hover { color: rgb(75, 191, 165); background-image: url('../imgs/ico-per-hover.png'); }
-.want-list .want-cont { color: rgb(75, 191, 165); padding-left: 81px; height: 18px; background-image: url('../imgs/want_contact.png'); background-repeat: no-repeat; background-position: left 1px; cursor: pointer; margin-left: 15px; }
 .want-tel { display: none; margin-left: 10px; padding-left: 12px; background: transparent url('../imgs/icon_arr.png') no-repeat scroll left center; }
 .want-com { display: block; position: absolute; right: 20px; bottom: 20px; font-size: 13px; color: rgb(75, 192, 165); border: 1px solid rgb(75, 192, 165); border-radius: 15px; width: 106px; height: 30px; line-height: 30px; text-align: center; }
 .want-com .want-com-txt { padding-left: 24px; background: transparent url('../imgs/ico_comment.png') no-repeat scroll left center; display: inline-block; }

@@ -192,8 +192,10 @@ div.center { position: relative; }
 
 .info .department { text-align: left; width: 35%; float: left; font-size: 1em; color: rgb(133, 141, 142);}
 .info .place { text-align: right; width: 55%; float: right; font-size: 1em; color: rgb(133, 141, 142);}
-.info .school { position: absolute; max-width: 100%; top: 168px; left: 0px; background-color: rgba(68, 193, 165, 0.9); color: rgb(255, 255, 255); padding: 0px 10px; height: 32px; line-height: 32px; font-size: 16px; }
+.info .school { position: absolute; max-width: 100%; top: 208px; left: 0px; background-color: rgb(75, 192, 15); color: rgb(255, 255, 255); padding: 0px 10px; height: 32px; line-height: 32px; font-size: 16px; }
 .info .school span {  }
+.school0 { position: absolute; max-width: 100%; top: 208px; left: 0px; background-color: #FFB300; color: rgb(255, 255, 255); padding: 0px 10px; height: 32px; line-height: 32px; font-size: 16px; }
+
 @media screen and (min-width: 1280px) {
 	.main { width: 840px; }
 }
@@ -201,7 +203,7 @@ div.center { position: relative; }
 	.main { width: 1016px; }
 	.item .img { height: 240px; }
 	.item { width: 240px; height: auto; }
-	.info .school { top: 208px; }
+	.info .school .school0{ top: 208px; }
 }
 @media screen and (min-width: 1280px) {
 }
@@ -260,3 +262,7 @@ div.center { position: relative; }
 .arrow-right { text-align: left; background-position: -10px -60px; }
 .arrow-right::before { content: ""; margin-right: 0.5em; }
 .arrow-right:hover { background-position: -10px -160px; }
+.loginandrigist {
+    margin-left: 1000px;
+    margin-top: -66px;
+}

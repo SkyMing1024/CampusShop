@@ -12,12 +12,26 @@ import indi.mt.shop.daoimpl.ProductDaoImpl;
 import indi.mt.shop.daoimpl.ProductWithUserInfoDaoImpl;
 import indi.mt.shop.daoimpl.UserDaoImpl;
 import indi.mt.shop.daoimpl.WantInfoDaoImpl;
+import indi.mt.shop.daoimpl.WantInfoWithUserInfoDaoImpl;
 import indi.mt.shop.domain.Product;
 import indi.mt.shop.domain.ProductWithUserInfo;
+import indi.mt.shop.domain.WantInfoWithUserInfo;
 import indi.mt.shop.utils.JDBCTools;
 
 
 public class Test {
+	
+	@org.junit.Test
+	public void testgetWantInfoWithUserInfoByUserId(){
+		WantInfoWithUserInfoDaoImpl w = new WantInfoWithUserInfoDaoImpl();
+		
+		
+		System.out.println(w.getWantInfoWithUserInfos());
+	
+	}
+	
+	
+	
 	
 	@org.junit.Test
 	public void testGetProduct(){

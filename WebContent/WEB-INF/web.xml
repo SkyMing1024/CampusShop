@@ -28,7 +28,7 @@
     <description></description>
     <display-name>ProductListServlet</display-name>
     <servlet-name>ProductListServlet</servlet-name>
-    <servlet-class>indi.mt.shop.controller.ProductListServlet</servlet-class>
+    <servlet-class>indi.mt.shop.servlet.ProductListServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>ProductListServlet</servlet-name>
@@ -38,10 +38,30 @@
     <description></description>
     <display-name>ProductServlet</display-name>
     <servlet-name>ProductServlet</servlet-name>
-    <servlet-class>indi.mt.shop.controller.ProductServlet</servlet-class>
+    <servlet-class>indi.mt.shop.servlet.ProductServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>ProductServlet</servlet-name>
     <url-pattern>/productServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>WantInfoServlet</display-name>
+    <servlet-name>WantInfoServlet</servlet-name>
+    <servlet-class>indi.mt.shop.servlet.WantInfoServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>WantInfoServlet</servlet-name>
+    <url-pattern>/wantInfoServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ProductSearchServlet</display-name>
+    <servlet-name>ProductSearchServlet</servlet-name>
+    <servlet-class>indi.mt.shop.servlet.ProductSearchServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ProductSearchServlet</servlet-name>
+    <url-pattern>/productSearchServlet</url-pattern>
   </servlet-mapping>
 </web-app>

@@ -17,7 +17,7 @@ public class ProductListService {
 	public ProductWithUserInfo getProductWithUserInfoById(int pid){
 		
 		
-		return null;
+		return productWithUserInfoDaoImpl.getProductWithUserInfo(pid);
 	}
 	
 	public List<Product> getProductListBySearchKeyword(String keywor){
