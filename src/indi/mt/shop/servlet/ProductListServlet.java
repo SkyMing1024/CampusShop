@@ -49,7 +49,6 @@ public class ProductListServlet extends HttpServlet {
 		
 		Gson gson = new Gson();
 		String json = gson.toJson(list);
-		System.out.println(list);
 		
 		response.setCharacterEncoding("utf-8");
 		response.setContentType("application/json;charset=utf-8");

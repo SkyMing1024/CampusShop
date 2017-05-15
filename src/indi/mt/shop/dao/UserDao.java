@@ -8,6 +8,8 @@ public interface UserDao {
 	
 	User getUserById(String id);
 	
+	User getUserByIdPwd(String id,String pwd);
+	
 	User getUserByName(String userName);
 	
 	List<User> getUsers();

@@ -59,5 +59,12 @@ public class UserDaoImpl extends BaseDao<User>implements UserDao {
 		update(sql, id);
 	}
 
+	@Override
+	public User getUserByIdPwd(String id, String pwd) {
+		String sql = "SELECT u.id,u.email,u.`password`,u.`name`,u.area,u.college,u.grade,"
+				+" u.tel,u.QQ,u.photo,u.point FROM `user` AS u WHERE u.id = ? AND u.`password` = ?";
+		return query(sql, id,pwd);
+	}
+
 
 }

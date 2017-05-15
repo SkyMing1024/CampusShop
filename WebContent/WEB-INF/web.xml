@@ -64,4 +64,24 @@
     <servlet-name>ProductSearchServlet</servlet-name>
     <url-pattern>/productSearchServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>LoginServlet</display-name>
+    <servlet-name>LoginServlet</servlet-name>
+    <servlet-class>indi.mt.shop.servlet.LoginServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LoginServlet</servlet-name>
+    <url-pattern>/loginServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>RegServlet</display-name>
+    <servlet-name>RegServlet</servlet-name>
+    <servlet-class>indi.mt.shop.servlet.RegServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RegServlet</servlet-name>
+    <url-pattern>/regServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

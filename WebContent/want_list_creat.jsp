@@ -22,7 +22,7 @@
             <div class="main center">
                 <img class="release-icon-main" src="imgs/release-icon.png" alt="">
                 <div class="wave-fluid"></div>
-                <div class="release-title">发布商品出售</div>
+                <div class="wantInfo-release-title">发布商品出售</div>
                 
                 <div class="form-wr">
                     <div class="form-must-wr">

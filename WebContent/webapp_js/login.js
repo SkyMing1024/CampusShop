@@ -56,10 +56,76 @@ function getParam(pname) {
 var reMethod = "GET",
 	pwdmin = 6;
 
-//注册
 $(document).ready(function() {
+	
+	$('#id').focus(function(){
+		$('#loginCue').html("<font ><b>请输入学号</b></font>");
+	}).blur(function(){
+		if($('#id').val().length == 0){
+			$('#loginCue').html("<font color='red'><b>学号不能为空</b></font>");
+			return false;
+		}else{
+			$.ajax({
+				type: "GET" ,
+				url: "loginServlet",
+				data: "uid=" + $("#id").val() + '&flag=' + 1,
+				success: function(res) {
+					//alert("res:"+res+"\n"+"resLength:"+res.length)
+					if (res.length > 1) {
+						$('#id').css({
+							border: "1px solid red",
+							boxShadow: "0 0 2px red"
+						});
+						$("#loginCue").html("<font color='red'><b>学号不存在</b></font>");
+						$("#login_button").attr("disabled","true");
+						return false;
+					} else {
+						$('#id').css({
+							border: "1px solid #D7D7D7",
+							boxShadow: "none"
+						});
+						$("#loginCue").focus().html("<font ><b>请继续输入密码</b></font>");
+						$("#login_button").removeAttr("disabled");
+					}}
+			});
+		}
+	})
+	
+	$('#login_button').click(function(){
+		if($('#id').val().length == 0){
+			$('#id').focus().css({
+				border: "1px solid red",
+				boxShadow: "0 0 2px red"
+			});
+			$('#loginCue').html("<font color='red'><b>学号不能为空</b></font>");
+			return false;
+		}else {
+			$('#id').css({
+				border: "1px solid #D7D7D7",
+				boxShadow: "none"
+			});
+		}
+		
+		if($('#pwd').val().length == 0){
+			$('#pwd').focus().css({
+				border: "1px solid red",
+				boxShadow: "0 0 2px red"
+			});
+			$('#loginCue').html("<font color='red'><b>密码不能为空</b></font>");
+			return false;
+		}else {
+			$('#pwd').css({
+				border: "1px solid #D7D7D7",
+				boxShadow: "none"
+			});
+		}
+		
+		$("#login_button").submit();
+		
+	})
 
-	$('#reg-button').click(function() {
+//注册
+	$('#reg_button').click(function() {
 
 		var sqq = /^[1-9]{1}[0-9]{4,9}$/;
 
@@ -78,33 +144,6 @@ $(document).ready(function() {
 			});
 		}
 		
-
-		
-		$.ajax({
-			type: reMethod,
-			url: "",
-			data: "uid=" + $("#userid").val() + '&temp=' + new Date(),
-			dataType: 'html',
-			success: function(result) {
-
-				if (result.length > 2) {
-					$('#userid').focus().css({
-						border: "1px solid red",
-						boxShadow: "0 0 2px red"
-					});
-					$("#userCue").html(result);
-					return false;
-				} else {
-					$('#userid').css({
-						border: "1px solid #D7D7D7",
-						boxShadow: "none"
-					});
-				}
-
-			}
-		});
-
-
 		if ($('#password').val().length < pwdmin) {
 			$('#password').focus().css({
 				border: "1px solid red",

@@ -16,10 +16,18 @@ import indi.mt.shop.daoimpl.WantInfoWithUserInfoDaoImpl;
 import indi.mt.shop.domain.Product;
 import indi.mt.shop.domain.ProductWithUserInfo;
 import indi.mt.shop.domain.WantInfoWithUserInfo;
+import indi.mt.shop.service.UserService;
 import indi.mt.shop.utils.JDBCTools;
 
 
 public class Test {
+	
+	@org.junit.Test
+	public void testGetUserById() {
+		UserService userService = new UserService();
+		System.out.println(userService.getUserByIdPwd("201322146108","123456"));
+		
+	}
 	
 	@org.junit.Test
 	public void testgetWantInfoWithUserInfoByUserId(){

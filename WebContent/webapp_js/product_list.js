@@ -40,7 +40,7 @@ function initProducts(){
                     +' <div class="info">'
                         +' <div class="price">'+resp[i].salePrice+'</div>'
                         +' <div class="name"> '
-                        +' <a href="product_detail.jsp" target="_top">'+resp[i].pname+'</a>'
+                        +' <a href="product_detail.jsp?pid='+resp[i].pid+'" target="_top">'+resp[i].pname+'</a>'
                         +' </div>'
                         +' <div class="department"><span>原价：'+resp[i].buyPrice+'</span></div>'
                         +' <div class="place"><span>上架时间：'+resp[i].creatTime+'</span></div>'

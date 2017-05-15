@@ -30,15 +30,18 @@
             <div class="web_login" id="web_login">
                <div class="login-box">
 			<div class="login_form">
-				<form action="" name="loginform" accept-charset="utf-8" id="login_form" class="loginForm" 
+				<div id="loginCue" class="cue">欢迎登陆</div>
+			
+				<form action="loginServlet" name="loginform" accept-charset="utf-8" id="login_form" class="loginForm" 
                     method="post">
                 <input type="hidden" name="did" value="0"/>
                 <input type="hidden" name="to" value="log"/>
+                <input type="hidden" name="flag" value="3"/>
                 <div class="uinArea" id="uinArea">
                 <label class="input-tips" for="id">学号：</label>
                 <div class="inputOuter" id="uArea">
                     
-                    <input type="text" id="id" name="id" class="inputstyle"/>
+                    <input type="text" id="id" name="uid" class="inputstyle" value="${uid}"/>
                 </div>
                 </div>
                 <div class="pwdArea" id="pwdArea">
@@ -49,7 +52,10 @@
                 </div>
                 </div>
                
-                <div style="padding-left:50px;margin-top:20px;"><input type="submit" value="登 录" style="width:150px;" class="button_blue"/></div>
+                	<div style="padding-left:50px;margin-top:20px;">
+                	<button id="login_button"type="submit" value="登 录" style="width:150px;" class="button_blue" href="javascript::">登录按钮</button>
+                		<!-- <input id="login_button"type="submit" value="登 录" style="width:150px;" class="button_blue"/> -->
+                	</div>
               </form>
            </div>
            
@@ -63,7 +69,7 @@
     <div class="qlogin" id="qlogin" style="display: none; ">
    
     <div class="web_login">
-        <form name="form2" id="regForm" accept-charset="utf-8"  action="" method="post">
+        <form name="form2" id="regForm" accept-charset="utf-8"  action="regServlet" method="post">
 	      <input type="hidden" name="to" value="reg"/>
 		  <input type="hidden" name="did" value="0"/>
         <ul class="reg_form" id="reg-ul">
@@ -103,7 +109,7 @@
                 
                 <li>
                     <div class="inputArea">
-                        <input type="button" id="reg-button"  style="margin-top:10px;margin-left:85px;" class="button_blue" value="注册成为会员"/> 
+                        <input type="button" id="reg_button"  style="margin-top:10px;margin-left:85px;" class="button_blue" value="注册成为会员"/> 
                     </div>
                     
                 </li><div class="cl"></div>

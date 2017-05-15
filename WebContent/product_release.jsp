@@ -287,13 +287,13 @@
                         </div>
                     </div>
 
-                    <div class="form-share-wr">
+                    <!-- <div class="form-share-wr">
                         <label for="form-share">
                             <input id="form-share" name="share" checked="checked" type="checkbox">
                             <span>我同意&nbsp;
                                 <a href="http://www.2shoujie.com/publish_rule" target="_top">商品发布规则</a></span>
                         </label>
-                    </div>
+                    </div> -->
                     <input id="school_id" value="1" type="hidden">
                     <input id="user_school_id" value="1" type="hidden">
                     <button type="button" class="form-submit" onclick="pre_release();">马上发布</button></div>

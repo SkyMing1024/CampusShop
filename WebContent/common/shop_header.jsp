@@ -11,8 +11,18 @@
     margin-left: 1000px;
     margin-top: -66px;
 }
-</style>
 
+#person_info {
+    height: 100%;
+    cursor: pointer;
+    position: relative;
+}
+main.css?v=201506100001:20
+.clearfix {
+    zoom: 1;
+}
+</style>
+<%-- <link media="all" href="${pageContext.request.contextPath}/css/index.css" type="text/css" rel="stylesheet"> --%>
 </head>
 <body>
 	<header class="ease2">
@@ -26,8 +36,8 @@
 	            <img src="imgs/2shoujie_web_title.png" alt="wuster专属校园二手物品交易平台">
 	        </a>
 	        <div class="search-box-wr ease2">
-	            <form class="search-box center" action="productSearchServlet" method="post">
-	                <button type="submit" class="search-submit"></button>
+	            <form class="search-box center" action="" method="post">
+	               <button type="submit" class="search-submit" id="search-button">搜索</button> 
 	                <div class="input-wr">
 	                    <img class="search-icon" src="imgs/search-icon.png">
 	                    <div class="search-input">
@@ -44,9 +54,9 @@
 	                <a class="hots" href="${pageContext.request.contextPath}/product_list.jsp?cat=8" target="_top">图书</a>
 	            </div>
 	        </div>
-
-	        <div class="ease2 loginandrigist">
-	       
+<%-- <input   type="text" value="${sessionScope.user.id}"> --%>
+	        <div class="ease2 log-reg" id="have-not-login">
+	       		<!-- loginandrigist -->
 	            <div class="button" ><a href="login.jsp">登录</a></div>
 	            <div class="button" ><a href="login.jsp?a=0">注册</a></div>
 	        </div>
@@ -55,10 +65,23 @@
 </body>
 
 <script>
-
+	$(document).ready(function(){
+	var userName = "${sessionScope.user.name}"
+	var userPhoto = "${sessionScope.user.photo}"
+	var userId = "${sessionScope.user.id}"  
+	
+	alert(userPhoto);
+	if(userId != ""&&userId!=null){
+	$("#have-not-login").html("");
+	var str=$('<div id="have_login" class="clearfix"><div id="person_info" class="clearfix">'+
+            '<a href="http://hust.2shoujie.com/user/level"><img  class="avatar"  style="height:48px;width:48px;" src="imgs/'+userPhoto+'"></a>'+
+            '<div  style="display:inline;"  class="person_name"><a   href="#">Hi：'+userId+'</a></div></div> </div>')
+	$("#have-not-login").append(str)
+	}
+	
+	})
 	
 	
-
 </script>
 
 
