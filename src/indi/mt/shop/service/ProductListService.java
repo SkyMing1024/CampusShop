@@ -14,15 +14,20 @@ public class ProductListService {
 	
 	static ProductWithUserInfoDaoImpl productWithUserInfoDaoImpl= new ProductWithUserInfoDaoImpl();
 	
-	public ProductWithUserInfo getProductWithUserInfoById(int pid){
+	//根据用户id查找商品
+	public List<Product> getProductsByUserId(String id) {
 		
+		return productDaoImpl.getProductsByUserId(id);
+	}
+	
+	
+	public ProductWithUserInfo getProductWithUserInfoById(int pid){
 		
 		return productWithUserInfoDaoImpl.getProductWithUserInfo(pid);
 	}
 	
 	public List<Product> getProductListBySearchKeyword(String keywor){
 		List<Product> list = new ArrayList<>();
-		
 		
 		return list ;
 	}

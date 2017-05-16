@@ -72,6 +72,7 @@
         <form name="form2" id="regForm" accept-charset="utf-8"  action="regServlet" method="post">
 	      <input type="hidden" name="to" value="reg"/>
 		  <input type="hidden" name="did" value="0"/>
+		  <input type="hidden" name="flag" value="2"/>
         <ul class="reg_form" id="reg-ul">
         		<div id="userCue" class="cue">快速注册请注意格式</div>
                 <li>

@@ -70,11 +70,10 @@ main.css?v=201506100001:20
 	var userPhoto = "${sessionScope.user.photo}"
 	var userId = "${sessionScope.user.id}"  
 	
-	alert(userPhoto);
 	if(userId != ""&&userId!=null){
 	$("#have-not-login").html("");
 	var str=$('<div id="have_login" class="clearfix"><div id="person_info" class="clearfix">'+
-            '<a href="http://hust.2shoujie.com/user/level"><img  class="avatar"  style="height:48px;width:48px;" src="imgs/'+userPhoto+'"></a>'+
+            '<a href="user_center.jsp?id='+userId+'"><img  class="avatar"  style="height:48px;width:48px;" src="imgs/'+userPhoto+'"></a>'+
             '<div  style="display:inline;"  class="person_name"><a   href="#">Hi：'+userId+'</a></div></div> </div>')
 	$("#have-not-login").append(str)
 	}

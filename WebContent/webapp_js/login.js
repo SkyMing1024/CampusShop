@@ -125,6 +125,33 @@ $(document).ready(function() {
 	})
 
 //注册
+	
+	$("#userid").blur(function(){
+		$.ajax({
+			type: "GET" ,
+			url: "regServlet",
+			data: "uid=" + $("#userid").val() + '&flag=' + 1,
+			success: function(res) {
+				//alert("res:"+res+"\n"+"resLength:"+res.length)
+				if (res.length > 2) {
+					$('#userid').css({
+						border: "1px solid red",
+						boxShadow: "0 0 2px red"
+					});
+					$("#userCue").html("<font color='red'><b>学号已存在</b></font>");
+					return false;
+				} else {
+					$('#userid').css({
+						border: "1px solid #D7D7D7",
+						boxShadow: "none"
+					});
+					$("#userCue").html("<font ><b>请继续输入</b></font>");
+				}}
+		});
+	})
+	
+	
+	
 	$('#reg_button').click(function() {
 
 		var sqq = /^[1-9]{1}[0-9]{4,9}$/;
@@ -143,6 +170,7 @@ $(document).ready(function() {
 				boxShadow: "none"
 			});
 		}
+		
 		
 		if ($('#password').val().length < pwdmin) {
 			$('#password').focus().css({

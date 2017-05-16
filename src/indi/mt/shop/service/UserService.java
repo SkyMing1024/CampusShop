@@ -7,6 +7,13 @@ public class UserService {
 	
 	static UserDaoImpl userDaoImpl = new UserDaoImpl();
 	
+	
+	//用户注册
+	public void regUser(User user) {
+		userDaoImpl.addUser(user);
+	}
+	
+	
 	public User getUserById(String id){
 		return userDaoImpl.getUserById(id);
 	}

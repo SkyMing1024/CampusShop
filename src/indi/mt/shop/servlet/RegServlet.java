@@ -1,10 +1,15 @@
 package indi.mt.shop.servlet;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import indi.mt.shop.domain.User;
+import indi.mt.shop.service.UserService;
 
 public class RegServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -13,12 +18,42 @@ public class RegServlet extends HttpServlet {
     
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		UserService userService = new UserService();
+		PrintWriter out = response.getWriter();
+		User user = new User();
+		String res = null;
+		String flag = request.getParameter("flag");
 		
+		if(Integer.parseInt(flag) == 1){
+			String uid = request.getParameter("uid");
+			user = userService.getUserById(uid);
+			if (user != null) {
+				res = "aaa";
+			}else {
+				res = "a";
+			}
+			response.setCharacterEncoding("utf-8");
+			response.setContentType("text/html;charset=utf-8");
+			out.write(res);
+		}
+		
+		
+		if(Integer.parseInt(flag) == 2){
+			String id = request.getParameter("userid");
+			String pwd = request.getParameter("password");
+			String qq = request.getParameter("qq");
+			user.setId(id);
+			user.setPassword(pwd);
+			user.setQq(qq);
+			userService.regUser(user);
+			request.getSession().setAttribute("user", user);
+			response.sendRedirect("user_center.jsp");
+		}
 		
 		
 		//response.sendRedirect("index.jsp");
-		request.setAttribute("name", "了几分动感");
-		request.getRequestDispatcher("index.jsp").forward(request, response);
+		//request.setAttribute("name", "了几分动感");
+		//request.getRequestDispatcher("index.jsp").forward(request, response);
 	}
 
 	

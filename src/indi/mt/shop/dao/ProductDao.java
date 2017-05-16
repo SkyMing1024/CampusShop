@@ -6,6 +6,8 @@ import indi.mt.shop.domain.Product;
 
 public interface ProductDao {
 	
+	//根据用户id查找商品
+	List<Product> getProductsByUserId(String uid );
 	
 	//根据pid查询单个商品
 	Product getProductById(int pid);

@@ -22,6 +22,10 @@ import indi.mt.shop.utils.JDBCTools;
 
 public class Test {
 	
+	
+	
+	
+	
 	@org.junit.Test
 	public void testGetUserById() {
 		UserService userService = new UserService();
@@ -42,9 +46,9 @@ public class Test {
 	
 	
 	@org.junit.Test
-	public void testGetProduct(){
+	public void testGetProductsByUserId(){
 		ProductDaoImpl productDaoImpl = new ProductDaoImpl();
-		System.out.println(productDaoImpl.getProductsOnsaleByUserPoints());
+		System.out.println(productDaoImpl.getProductsByUserId("201322146107"));
 	}
 	
 	@org.junit.Test
