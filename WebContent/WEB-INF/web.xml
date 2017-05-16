@@ -94,4 +94,44 @@
     <servlet-name>UserServlet</servlet-name>
     <url-pattern>/userServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>WantInfoCreatServlet</display-name>
+    <servlet-name>WantInfoCreatServlet</servlet-name>
+    <servlet-class>indi.mt.shop.servlet.WantInfoCreatServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>WantInfoCreatServlet</servlet-name>
+    <url-pattern>/wantInfoCreatServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>LogoutServlet</display-name>
+    <servlet-name>LogoutServlet</servlet-name>
+    <servlet-class>indi.mt.shop.servlet.LogoutServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LogoutServlet</servlet-name>
+    <url-pattern>/logoutServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ProductReleaseServlet</display-name>
+    <servlet-name>ProductReleaseServlet</servlet-name>
+    <servlet-class>indi.mt.shop.servlet.ProductReleaseServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ProductReleaseServlet</servlet-name>
+    <url-pattern>/productrelease</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ProductEditServlet</display-name>
+    <servlet-name>ProductEditServlet</servlet-name>
+    <servlet-class>indi.mt.shop.servlet.ProductEditServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ProductEditServlet</servlet-name>
+    <url-pattern>/productedit</url-pattern>
+  </servlet-mapping>
 </web-app>

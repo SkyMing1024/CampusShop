@@ -74,10 +74,19 @@ main.css?v=201506100001:20
 	$("#have-not-login").html("");
 	var str=$('<div id="have_login" class="clearfix"><div id="person_info" class="clearfix">'+
             '<a href="user_center.jsp?id='+userId+'"><img  class="avatar"  style="height:48px;width:48px;" src="imgs/'+userPhoto+'"></a>'+
-            '<div  style="display:inline;"  class="person_name"><a   href="#">Hi：'+userId+'</a></div></div> </div>')
+            '<div  style="display:inline;"  class="person_name"><a   href="#" id="id-btn">Hi：'+userId+'</a></div>'+
+            '</div> </div>')
 	$("#have-not-login").append(str)
 	}
 	
+	$("#id-btn").click(function(){
+		$.post("logoutServlet",function(status){
+			$("#have-not-login").html("");
+			$("#have-not-login").append('<div class="button" ><a href="login.jsp">登录</a></div>'+
+		            '<div class="button" ><a href="login.jsp?a=0">注册</a></div>')
+		})
+		
+	})
 	})
 	
 	

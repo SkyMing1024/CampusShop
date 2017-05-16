@@ -11,6 +11,13 @@ public class User {
 	private String tel;
 	private String qq;
 	private String photo;
+	private int point;
+	public int getPoint() {
+		return point;
+	}
+	public void setPoint(int point) {
+		this.point = point;
+	}
 	public String getId() {
 		return id;
 	}
@@ -72,7 +79,7 @@ public class User {
 		this.photo = photo;
 	}
 	public User(String id, String email, String password, String name, String area, String college, String grade,
-			String tel, String qQ, String photo) {
+			String tel, String qQ, String photo,int point) {
 		super();
 		this.id = id;
 		this.email = email;
@@ -84,6 +91,7 @@ public class User {
 		this.tel = tel;
 		qq = qQ;
 		this.photo = photo;
+		this.point = point;
 	}
 	public User() {
 		// TODO Auto-generated constructor stub
@@ -92,7 +100,7 @@ public class User {
 	public String toString() {
 		return "User [id=" + id + ", email=" + email + ", password=" + password + ", name=" + name + ", area=" + area
 				+ ", college=" + college + ", grade=" + grade + ", tel=" + tel + ", qq=" + qq + ", photo=" + photo
-				+ "]";
+				+  ",point="+point+"]";
 	}
 	
 }

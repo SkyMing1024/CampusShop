@@ -28,11 +28,13 @@
        </p> -->
        	
         <div id="release-button1" >
-            <a  href="${pageContext.request.contextPath}/want_list_creat.jsp" style="color: white" > 我要买</a>
+             <a  href="want_list_creat.jsp" style="color: white" id="want-buy"
+             onlick="return ${session.user.name} "> 我要买</a> 
+            <!-- <a  href="#" style="color: white" id="want-buy"> 我要买</a> -->
         </div>
         <br><br>
         <div id="release-button2" >
-            <a  href="${pageContext.request.contextPath}/product_release.jsp" style="color: white" > 我要卖</a>
+            <a  href="product_release.jsp" style="color: white" id="want-sale"> 我要卖</a>
         </div>       
         <br><br>
         <div id="release-button3" >
@@ -57,7 +59,8 @@
         </div>
        
     </div>
-
     </aside>
 </body>
+
+
 </html>

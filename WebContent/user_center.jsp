@@ -11,7 +11,7 @@
     <script  src="${pageContext.request.contextPath}/js/jquery-3.1.1.min.js"></script>
     <script src="${pageContext.request.contextPath}/js/add.js"></script>
     <script src="${pageContext.request.contextPath}/js/hm.js"></script>
-    <script src="${pageContext.request.contextPath}/js/common.js"></script>
+    <%-- <script src="${pageContext.request.contextPath}/js/common.js"></script> --%>
     <script src="${pageContext.request.contextPath}/js/common_001.js"></script>
 	<script src="webapp_js/user_center.js"></script>
 </head>
@@ -120,21 +120,20 @@
         </div>
         <ul id="middle_nav" class="clearfix">
     
-    <li class="on"><a href="http://hust.2shoujie.com/user/goods">我发布的商品</a></li>
+   		<li class="on"><a href="http://hust.2shoujie.com/user/goods">我发布的商品</a></li>
 
-</ul>
+		</ul>
 
         <div id="my_products">
               <div id="onsale_pro">
                 
-                 <div class="enshr_each" id="prolist">  
-                 
+                  <!-- <div class="enshr_each" id="">  
 	                    <div class="enshr_info">
 	                        <h2><a href="http://hust.2shoujie.com/goods/186267" title="坚果pro">坚果pro</a></h2>
 	                        <p>最新上市，工匠设计，美得不像实力派。</p>
 	                        <div class="enshr_state">
-	                            <span class="enshrine_it" onclick="sold();">确认售出</span>
-	                            <span class="enshrine_it make_edition" onclick="off_shelf();">下架</span>
+	                            <span class="enshrine_it" onclick="sold(45);">确认售出</span>
+	                            <span class="enshrine_it make_edition" onclick="off_shelf(10);">下架</span>
 	                            <span class="enshrine_it make_edition" onclick="refresh();">擦亮</span>
 	                            <a href="#" target="_top">
 	                                <span class="enshrine_it  make_edition">编辑</span>
@@ -145,10 +144,29 @@
 	                    <a href="http://hust.2shoujie.com/goods/186267">
 	                        <img class="enshr_ph" src="web_1494343619376_o_1bfmt44p710e8mj7g1k1jev3a19" alt="梵蒂冈地方官">
 	                    </a>
-	                    
-                </div>
-                </div>
-            </div>
+                </div>  -->
+                
+                <div class="enshr_each" id="">  
+	                    <div class="enshr_info">
+	                        <h2><a href="http://hust.2shoujie.com/goods/186267" title="坚果pro">坚果pro最新</a></h2>
+	                        <p>最新上市，工匠设计，美得不像实力派。</p>
+	                        <div class="enshr_state">
+	                            <span class="enshrine_it" onclick="soldout(45);">确认售出</span>
+	                            <span class="enshrine_it make_edition" onclick="offshelf(10);">下架</span>
+	                            <span class="enshrine_it make_edition" onclick="refresh();">擦亮</span>
+	                            <a href="#" target="_top">
+	                                <span class="enshrine_it  make_edition">编辑</span>
+	                            </a>
+	                            
+	                        </div>
+	                    </div>
+	                    <a href="http://hust.2shoujie.com/goods/186267">
+	                        <img class="enshr_ph" src="web_1494343619376_o_1bfmt44p710e8mj7g1k1jev3a19" alt="梵蒂冈地方官">
+	                    </a>
+                </div> 
+                
+              </div>
+        </div>
             
             
     </div>

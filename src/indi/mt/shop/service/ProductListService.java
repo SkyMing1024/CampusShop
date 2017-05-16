@@ -14,6 +14,14 @@ public class ProductListService {
 	
 	static ProductWithUserInfoDaoImpl productWithUserInfoDaoImpl= new ProductWithUserInfoDaoImpl();
 	
+	
+	
+	
+	//根据pid删除商品
+	public void deleteProductByPid(String pid){
+		productDaoImpl.deleteProductById(pid);
+	}
+	
 	//根据用户id查找商品
 	public List<Product> getProductsByUserId(String id) {
 		

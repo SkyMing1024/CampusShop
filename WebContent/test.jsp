@@ -60,6 +60,7 @@
 					<th data-field=beloneto>主人</th>
 					<th data-field="cid2">分类</th>
 					<th data-field="creatTime">发布日期</th>
+					<th >发布日期</th>
 				</tr>
 			</thead>
 	</table>

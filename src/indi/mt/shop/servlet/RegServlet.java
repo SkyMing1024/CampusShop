@@ -47,7 +47,7 @@ public class RegServlet extends HttpServlet {
 			user.setQq(qq);
 			userService.regUser(user);
 			request.getSession().setAttribute("user", user);
-			response.sendRedirect("user_center.jsp");
+			response.sendRedirect("user_center.jsp?id="+id+"");
 		}
 		
 		

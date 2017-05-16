@@ -8,10 +8,7 @@ var userid = getUrlParam('id');
 
 
 $(document).ready(function(){
-//	if(userid == ""&& userid ==null){
-//		alert("请先登录");
-//		window.history.back();
-//	}
+
 	inituser(userid);
 	
 	inituserpros(userid);
@@ -70,5 +67,23 @@ function inituserpros(uid){
 	});
 }
 
-
+function offshelf(pid){
+    if (!confirm('下架后商品别人将看不到，请是否确认下架？')) {
+        return;
+    }
+    $.post('productedit', 
+    		{"pid" : pid,"flag":1},
+    		function(res){
+    			res = $.parseJSON(res);
+		        if (res.code != 0) {
+		        	//失败
+		        	alert("res:"+res)
+		        	alert(res.code)
+		            alert("下架失败");
+		        } else {
+		        	alert(res.code)
+		            location.reload();
+		        }
+    });
+}
 
