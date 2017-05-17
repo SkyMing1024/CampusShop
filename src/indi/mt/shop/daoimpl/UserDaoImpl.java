@@ -10,21 +10,21 @@ public class UserDaoImpl extends BaseDao<User>implements UserDao {
 
 	@Override
 	public User getUserById(String id) {
-		String sql="SELECT id,name,password,email,area,college,grade,tel,QQ qq,photo "
+		String sql="SELECT id,name,password,email,area,college,grade,tel,QQ qq,photo,point "
 				+ " FROM user where id = ?";
 		return query(sql, id);
 	}
 
 	@Override
 	public User getUserByName(String userName) {
-		String sql="SELECT id,name,password,email,area,college,grade,tel,QQ qq,photo "
+		String sql="SELECT id,name,password,email,area,college,grade,tel,QQ qq,photo ,point "
 				+ " FROM user where name = ?";
 		return query(sql, userName);
 	}
 
 	@Override
 	public List<User> getUsers() {
-		String sql = "SELECT id,name,password,email,area,college,grade,tel,QQ qq,photo FROM user ";
+		String sql = "SELECT id,name,password,email,area,college,grade,tel,QQ qq,photo ,point FROM user ";
 		return queryList(sql);
 	}
 
@@ -66,5 +66,20 @@ public class UserDaoImpl extends BaseDao<User>implements UserDao {
 		return query(sql, id,pwd);
 	}
 
+	public void addPointByRefresh(String pid){
+		String sql="UPDATE `user` u ,products p SET point = point+2  WHERE u.id = p.beloneto AND p.pid = ?";
+		update(sql, pid);
+	}
 
+	@Override
+	public void addPointBySell(String pid) {
+		String sql="UPDATE `user` u ,products p SET point = point+5  WHERE u.id = p.beloneto AND p.pid = ?";
+		update(sql, pid);
+	}
+
+	@Override
+	public void addPointByRealsePro(String pid) {
+		String sql="UPDATE `user` u ,products p SET point = point+2  WHERE u.id = p.beloneto AND p.pid = ?";
+		update(sql, pid);
+	}
 }

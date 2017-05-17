@@ -6,6 +6,10 @@ import indi.mt.shop.domain.Product;
 
 public interface ProductDao {
 	
+	//擦亮
+	public void refreshProduct(String pid);
+	
+	
 	//根据用户id查找商品
 	List<Product> getProductsByUserId(String uid );
 	
@@ -57,5 +61,8 @@ public interface ProductDao {
 	void deleteProductById(String pid);
 	
 	void updateProduct(Product product);
+	
+	//售出商品，将商品状态改为0
+	void sellProduct(String pid);
 	
 }

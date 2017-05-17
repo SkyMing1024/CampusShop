@@ -64,12 +64,7 @@
             </c:forEach> -->
             
             
-             <!--  <li class="item fixed"></li>
-                <li class="item fixed"></li>
-                <li class="item fixed"></li>
-                <li class="item fixed"></li>
-                 
-                     <li class="item">
+           <!--  <li class="item">
                     <a href="http://hust.2shoujie.com/goods/169685.html" class="img" target="_top"><img src="ios_default_1455711227_71_0" alt="MacbookPro 13寸 12年版"></a>
                     <div class="info">
                         <div class="price">3500</div>

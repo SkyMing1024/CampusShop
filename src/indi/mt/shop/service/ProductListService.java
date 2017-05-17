@@ -7,6 +7,7 @@ import indi.mt.shop.daoimpl.ProductDaoImpl;
 import indi.mt.shop.daoimpl.ProductWithUserInfoDaoImpl;
 import indi.mt.shop.domain.Product;
 import indi.mt.shop.domain.ProductWithUserInfo;
+import sun.net.www.content.text.plain;
 
 public class ProductListService {
 	
@@ -14,8 +15,15 @@ public class ProductListService {
 	
 	static ProductWithUserInfoDaoImpl productWithUserInfoDaoImpl= new ProductWithUserInfoDaoImpl();
 	
+	//售出
+	public void sellProduct(String pid){
+		productDaoImpl.sellProduct(pid);
+	}
 	
-	
+	//擦亮商品
+	public void  refreshProduct(String pid) {
+		productDaoImpl.refreshProduct(pid);
+	}
 	
 	//根据pid删除商品
 	public void deleteProductByPid(String pid){

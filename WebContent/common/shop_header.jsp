@@ -85,6 +85,7 @@ main.css?v=201506100001:20
 			$("#have-not-login").append('<div class="button" ><a href="login.jsp">登录</a></div>'+
 		            '<div class="button" ><a href="login.jsp?a=0">注册</a></div>')
 		})
+		window.location.href="index.jsp";
 		
 	})
 	})

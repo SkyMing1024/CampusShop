@@ -170,10 +170,19 @@ public class ProductDaoImpl extends BaseDao<Product> implements ProductDao{
 
 	@Override
 	public List<Product> getProductsByUserId(String uid) {
-		String sql = "SELECT p.pid,p.pname,p.buy_price,p.sale_price,p.pdesc,p.pimage,p.beloneto,p.cid2, "
-					+ "p.read_times,p.state,p.isHot,p.creat_time FROM products AS p WHERE p.beloneto = ? ";
+		String sql = "SELECT p.pid,p.pname,p.buy_price buyPrice,p.sale_price salePrice,p.pdesc,p.pimage,p.beloneto,p.cid2, "
+					+ "p.read_times readTimes,p.state,p.isHot,p.creat_time creatTime FROM products AS p WHERE p.beloneto = ? ";
 		return queryList(sql, uid);
 	}
+
+	@Override
+	public void refreshProduct(String pid) {
+		String sql = "UPDATE products SET creat_time = CURRENT_DATE WHERE pid = ?";
+		update(sql, pid);
+	}
 	
-	
+	public void sellProduct(String pid){
+		String sql ="UPDATE products p SET p.state = 0 WHERE p.pid = ?";
+		update(sql, pid);
+	}
 }

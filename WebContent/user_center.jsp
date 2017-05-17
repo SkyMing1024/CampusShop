@@ -68,13 +68,12 @@
         </div>
         
         <ul class="seller_attr">
-            <li>当前积分：<span>97</span><a href="http://hust.2shoujie.com/user/point_detail" target="_top">查看积分明细</a></li>
-            <li>已卖出商品：<span>5</span></li>
+            <li>当前积分：<span id = "userpoint"></span><a href="" target="_top">查看积分明细</a></li>
+            <li>已发布商品：<span id="procount"></span></li>
         </ul>
     </div>
     <div id="user_photo">
-        <img id="origin_ph" src="imgs/avatar6.png" alt="大头像">
-        <img id="change_ph" src="imgs/person_hover.png" alt="更换头像" style="display: none;">
+          
     </div>
 </div>
 <ul id="middle_nav" class="clearfix">
@@ -127,33 +126,18 @@
         <div id="my_products">
               <div id="onsale_pro">
                 
-                  <!-- <div class="enshr_each" id="">  
-	                    <div class="enshr_info">
-	                        <h2><a href="http://hust.2shoujie.com/goods/186267" title="坚果pro">坚果pro</a></h2>
-	                        <p>最新上市，工匠设计，美得不像实力派。</p>
-	                        <div class="enshr_state">
-	                            <span class="enshrine_it" onclick="sold(45);">确认售出</span>
-	                            <span class="enshrine_it make_edition" onclick="off_shelf(10);">下架</span>
-	                            <span class="enshrine_it make_edition" onclick="refresh();">擦亮</span>
-	                            <a href="#" target="_top">
-	                                <span class="enshrine_it  make_edition">编辑</span>
-	                            </a>
-	                            
-	                        </div>
-	                    </div>
-	                    <a href="http://hust.2shoujie.com/goods/186267">
-	                        <img class="enshr_ph" src="web_1494343619376_o_1bfmt44p710e8mj7g1k1jev3a19" alt="梵蒂冈地方官">
-	                    </a>
-                </div>  -->
                 
-                <div class="enshr_each" id="">  
+                
+                 <!-- <div class="enshr_each" id="">  
 	                    <div class="enshr_info">
 	                        <h2><a href="http://hust.2shoujie.com/goods/186267" title="坚果pro">坚果pro最新</a></h2>
 	                        <p>最新上市，工匠设计，美得不像实力派。</p>
 	                        <div class="enshr_state">
-	                            <span class="enshrine_it" onclick="soldout(45);">确认售出</span>
-	                            <span class="enshrine_it make_edition" onclick="offshelf(10);">下架</span>
-	                            <span class="enshrine_it make_edition" onclick="refresh();">擦亮</span>
+	                        <span id="prostate">状态：正在出售</span>
+	                        &nbsp;&nbsp;<span id="prostate">上架日期：</span>
+	                            <span class="enshrine_it" onclick="sellout(5);">确认售出</span>
+	                            <span class="enshrine_it make_edition" onclick="offshelf(68);">下架</span>
+	                            <span class="enshrine_it make_edition" onclick="refresh(124);">擦亮</span>
 	                            <a href="#" target="_top">
 	                                <span class="enshrine_it  make_edition">编辑</span>
 	                            </a>
@@ -163,7 +147,7 @@
 	                    <a href="http://hust.2shoujie.com/goods/186267">
 	                        <img class="enshr_ph" src="web_1494343619376_o_1bfmt44p710e8mj7g1k1jev3a19" alt="梵蒂冈地方官">
 	                    </a>
-                </div> 
+                </div>   -->
                 
               </div>
         </div>

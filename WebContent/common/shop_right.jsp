@@ -42,7 +42,7 @@
         </div>
 
         <div class="helped ">
-         <span class="helpers">？</span>
+         <span class="helpers" id="ordercount"></span>
         </div>
         
         <div class="fl-wrapper clearfix">
@@ -61,6 +61,13 @@
     </div>
     </aside>
 </body>
+<script>
+$(document).ready(function(){
+	$.post("order",function(resp){
+		$("#ordercount").html(''+resp+'');
+	})
+})
 
+</script>
 
 </html>

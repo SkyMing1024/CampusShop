@@ -6,7 +6,6 @@ function getUrlParam(name) {
         }
 var userid = getUrlParam('id');
 
-
 $(document).ready(function(){
 
 	inituser(userid);
@@ -24,6 +23,7 @@ function inituser(id){
 		var name = resp.name;
 		var tel = resp.tel;
 		var qq = resp.qq;
+		var photo = resp.photo;
 		
 		var myinfo=$('<div id="account_info"><h2>账户信息</h2><ul class="infos"><li>账号</li> '
 		+'<li class="right_info">'+id+'</li></ul></div><div id="base_info"><h2>基本信息<span id="edit_info">编辑</span> '
@@ -32,7 +32,15 @@ function inituser(id){
 		+'<ul class="infos"><li>手机</li><li class="right_info"><span id="phone_span">'+tel+'</span> '
 		+'<input value="'+tel+'" id="phone"type="text"></li></ul><ul class="infos"><li>QQ</li><li class="right_info"> '
 		+'<span id="qq_span">'+qq+'</span><input value="'+qq+'" id="qq"type="text"></li></ul></div> ')
-
+		
+		//$("#user_photo").html('<img id="origin_ph" src="imgs/'+photo+'" alt="大头像">')
+		
+		
+		$("#userpoint").html('<p>'+resp.point+'</p>')
+		
+		$("#user_photo").html('<img id="origin_ph" src="imgs/'+photo+'" alt="大头像"> '+
+          ' <img id="change_ph" src="imgs/person_hover.png" alt="更换头像" style="display: none;">')
+          
 		$("#user_big_name").html('<p>'+name+'</p>');
 		$("#my_info").append(myinfo);
 		}
@@ -47,21 +55,40 @@ function inituserpros(uid){
 		dataType:"json",
 		data:{"uid":uid,"flag":2},
 		success:function(resp){
-		
+		var count = resp.length
 		for(var i = 0;i<resp.length;i++){
-
+			if(resp[i].state==1){
 			var mypro1 = $('<div class="enshr_each" id="prolist">  ' +
 					'<div class="enshr_info"><h2><a href="product_detail.jsp?pid='+resp[i].pid+'" '+
 					'title="坚果pro">'+resp[i].pname+'</a></h2><p>'+resp[i].pdesc+'</p>'+
-					'<div class="enshr_state"><span class="enshrine_it" onclick="sold();">确认售出</span>'+
-					'<span class="enshrine_it make_edition" onclick="off_shelf();">下架</span>'+
-					'<span class="enshrine_it make_edition" onclick="refresh();">擦亮</span>'+
+					'<div class="enshr_state"><span id="prostate">状态：正在出售'+resp[i].state+'</span>' +
+					'&nbsp;&nbsp;<span id="prostate">上架日期：'+resp[i].creatTime+'</span>'+
+					'<span class="enshrine_it" onclick="sellout('+resp[i].pid+');">确认售出</span>'+
+					'<span class="enshrine_it make_edition" onclick="offshelf('+resp[i].pid+');">下架</span>'+
+					'<span class="enshrine_it make_edition" onclick="refresh('+resp[i].pid+');">擦亮</span>'+
 	                '<a href="#" target="_top"><span class="enshrine_it  make_edition">编辑</span></a> '+
 	                '</div></div><a href="product_detail.jsp?pid='+resp[i].pid+'">'+
 	                '<img class="enshr_ph" src="'+resp[i].pimage+'" alt="'+resp[i].pname+'"></a></div>')
+			}
+	        if(resp[i].state==0){
+			var mypro1 = $('<div class="enshr_each" id="prolist">  ' +
+					'<div class="enshr_info"><h2><a href="product_detail.jsp?pid='+resp[i].pid+'" '+
+					'title="坚果pro">'+resp[i].pname+'</a></h2><p>'+resp[i].pdesc+'</p>'+
+					'<div class="enshr_state"><span id="prostate">状态：已售出'+resp[i].state+'</span>' +
+					'&nbsp;&nbsp;<span id="prostate">上架日期：'+resp[i].creatTime+'</span>'+
+					'<span class="enshrine_it" style="color:yellow" );">已售出</span>'+
+					'<span class="enshrine_it make_edition" style="color:red"  onclick="offshelf('+resp[i].pid+');">删除</span>'+
+					'<span class="enshrine_it make_edition" onclick="refresh('+resp[i].pid+');">擦亮</span>'+
+	                '<a href="#" target="_top"><span class="enshrine_it  make_edition">编辑</span></a> '+
+	                '</div></div><a href="product_detail.jsp?pid='+resp[i].pid+'">'+
+	                '<img class="enshr_ph" src="'+resp[i].pimage+'" alt="'+resp[i].pname+'"></a></div>')
+			}
+	       
+	                
+	                
 			$("#onsale_pro").append(mypro1);
 		}
-		
+		$("#procount").html('<p>'+count+'</p>')
 		
 		}
 	});
@@ -74,15 +101,50 @@ function offshelf(pid){
     $.post('productedit', 
     		{"pid" : pid,"flag":1},
     		function(res){
-    			res = $.parseJSON(res);
-		        if (res.code != 0) {
+		        if (res.length > 2) {
 		        	//失败
-		        	alert("res:"+res)
-		        	alert(res.code)
-		            alert("下架失败");
-		        } else {
-		        	alert(res.code)
+		        	alert("if:"+res.length)
 		            location.reload();
+		            l
+		        } else {
+		        	alert("else res:"+res.length)
+		        }
+    });
+}
+
+function refresh(pid){
+    if (!confirm('擦亮后，您的商品将靠前展示。')) {
+        return;
+    }
+    $.post('productedit', 
+    		{"pid" : pid,"flag":2},
+    		function(res){
+		       if (res.length > 2) {
+		        	
+		        	alert("恭喜！您已擦亮商品！")
+		            location.reload();
+		            l
+		        } else {
+		        	alert("对不起，擦亮失败，请重试")
+		        }
+    });
+}
+
+
+function sellout(pid){
+    if (!confirm('确认售出？')) {
+        return;
+    }
+    $.post('productedit', 
+    		{"pid" : pid,"flag":3},
+    		function(res){
+		       if (res.length > 2) {
+		        	
+		        	alert("恭喜！您又售出一个商品！")
+		            location.reload();
+		            l
+		        } else {
+		        	alert("售出失败，请重试")
 		        }
     });
 }

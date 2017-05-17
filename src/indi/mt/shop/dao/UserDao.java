@@ -22,5 +22,11 @@ public interface UserDao {
 	
 	void updateUserPassword(String id, String newPassword);
 	
+	void addPointByRefresh(String pid);
+	
+	void addPointBySell(String pid);
+	
+	void addPointByRealsePro(String pid);
+	
 	void deleteUserById(int id);
 }

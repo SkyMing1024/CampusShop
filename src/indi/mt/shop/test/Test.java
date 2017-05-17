@@ -8,22 +8,53 @@ import org.apache.commons.dbutils.handlers.BeanListHandler;
 
 import indi.mt.shop.dao.WantInfoDao;
 import indi.mt.shop.daoimpl.AdminDaoImpl;
+import indi.mt.shop.daoimpl.OrderDaoImpl;
 import indi.mt.shop.daoimpl.ProductDaoImpl;
 import indi.mt.shop.daoimpl.ProductWithUserInfoDaoImpl;
 import indi.mt.shop.daoimpl.UserDaoImpl;
 import indi.mt.shop.daoimpl.WantInfoDaoImpl;
 import indi.mt.shop.daoimpl.WantInfoWithUserInfoDaoImpl;
+import indi.mt.shop.domain.Order;
 import indi.mt.shop.domain.Product;
 import indi.mt.shop.domain.ProductWithUserInfo;
+import indi.mt.shop.domain.User;
 import indi.mt.shop.domain.WantInfoWithUserInfo;
+import indi.mt.shop.service.OrderService;
+import indi.mt.shop.service.ProductListService;
 import indi.mt.shop.service.UserService;
 import indi.mt.shop.utils.JDBCTools;
 
 
 public class Test {
 	
+	@org.junit.Test
+	public void testDeletePro(){
+		new ProductListService().deleteProductByPid("4");
+	}
 	
 	
+	@org.junit.Test
+	public void testInsertOrder(){
+		List<Order> count = new OrderService().getOrderAll();
+		System.out.println("list"+ count);
+		System.out.println("数量:"+count.size());
+		
+		
+	}
+	
+	
+	@org.junit.Test
+	public void  testRefresh(){
+		new ProductListService().refreshProduct("9");
+	}
+	
+	
+	
+	@org.junit.Test
+	public void  testGetUser(){
+		User user = new UserService().getUserById("201322146107");
+		System.out.println(user);
+	}
 	
 	
 	@org.junit.Test

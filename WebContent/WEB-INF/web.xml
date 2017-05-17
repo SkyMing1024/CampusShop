@@ -134,4 +134,14 @@
     <servlet-name>ProductEditServlet</servlet-name>
     <url-pattern>/productedit</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>OrderServlet</display-name>
+    <servlet-name>OrderServlet</servlet-name>
+    <servlet-class>indi.mt.shop.servlet.OrderServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>OrderServlet</servlet-name>
+    <url-pattern>/order</url-pattern>
+  </servlet-mapping>
 </web-app>

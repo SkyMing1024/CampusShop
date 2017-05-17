@@ -1,5 +1,6 @@
 $(document).ready(function(){
 	initProducts();
+	
 })
 function initProducts(){
 	$.ajax({
@@ -42,7 +43,7 @@ function initProducts(){
 }
 
 
-	
+
 	
 
 		
