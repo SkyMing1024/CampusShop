@@ -28,10 +28,22 @@
         <script  src="js/jquery-3.1.1.min.js"></script>
 
         <link media="all" href="css/release_product.css" type="text/css" rel="stylesheet">
-		<link media="all" href="css/index.css" type="text/css" rel="stylesheet"></head>
+		<link media="all" href="css/index.css" type="text/css" rel="stylesheet">
+
+<script>
+		var str="${sessionScope.user.name}"
+			if(!str){
+				alert("请您先登录");
+				window.location.href="login.jsp";
+			}
+		
+		
+		
 	
+</script>		
 </head>
-</head>
+	
+
 <body>
 	<%@ include file="common/shop_header.jsp" %>
 	<div class="container">
@@ -73,14 +85,16 @@
                 <!-- 上传图片结束 -->
                 <div class="form-wr">
                     <div class="form-must-wr">
+                    	
                         <div class="form-item l goods-title">
                             <div class="form-key">
                                 <span>商品名称</span></div>
                             <div class="form-value">
                                 <div class="form-input-wr">
-                                    <input id="title" name="title" placeholder="最多25个字" value="" type="text"></div>
+                                    <input id="title" name="title" placeholder="最多10个字" value="" type="text"></div>
                             </div>
                         </div>
+                        
                         <div class="form-item xl goods-desc">
                             <div class="form-key">
                                 <span>商品详情</span></div>
@@ -90,20 +104,22 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="form-item l goods-title">
+                        
+                        
+                        <div class="form-item m goods-price">
                             <div class="form-key">
-                                <span>交易地点</span></div>
+                                <span>购入价格</span></div>
                             <div class="form-value">
                                 <div class="form-input-wr">
-                                    <input id="trade_place" name="trade_place" placeholder="宿舍、教学楼、食堂等" value="" type="text"></div>
+                                    <input class="price" id="buyPrice" name="buyPrice" value="" type="text"></div>
                             </div>
                         </div>
                         <div class="form-item m goods-price">
                             <div class="form-key">
-                                <span>价格</span></div>
+                                <span>售出价格</span></div>
                             <div class="form-value">
                                 <div class="form-input-wr">
-                                    <input class="price" id="price" name="price" value="" type="text"></div>
+                                    <input class="price" id="salePrice" name="salePrice" value="" type="text"></div>
                             </div>
                         </div>
                         
@@ -119,7 +135,7 @@
                         </div>
 
                         <!--选择分类信息 -->
-                       <!--  <div class="form-item m goods-cat">
+                        <div class="form-item m goods-cat">
                             <div class="form-key">
                                 <span>分类</span></div>
                             <div class="form-value">
@@ -268,56 +284,13 @@
                                         <span>化妆品</span></li>
                                 </ul>
                             </div>
-                        </div> -->
+                        </div> 
                         
                         
                         
-                        <div class="form-item m goods-discount">
-                            <div class="form-key">
-                                <span>讲价</span></div>
-                            <div class="form-value">
-                                <div class="form-input-wr">
-                                    <span class="yes sel" data-value="1">可小刀</span>
-                                    <span class="no" data-value="0">不可刀</span>
-                                    <input id="discount" name="discount" value="1" type="hidden"></div>
-                            </div>
-                        </div>
                     </div>
-                    <div class="form-contact">联系方式</div>
-                    <div class="form-least">（至少选填一项）</div>
-                    <hr class="form-sep-form clear" size="1" color="#D0E0E2">
-                    <div class="form-select">
-                        <div class="form-item m">
-                            <div class="form-key">
-                                <span>手机</span>
-                            </div>
-                            <div class="form-value">
-                                <div class="form-input-wr" style="background-color: rgb(246, 249, 249); border: 1px solid rgb(208, 224, 226);">
-                                    <input id="tel" name="tel" value="" type="tel">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-item m">
-                            <div class="form-key">
-                                <span>QQ</span>
-                            </div>
-                            <div class="form-value">
-                                <div class="form-input-wr">
-                                    <input id="qq" name="qq" value="" type="text">
-                                    </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- <div class="form-share-wr">
-                        <label for="form-share">
-                            <input id="form-share" name="share" checked="checked" type="checkbox">
-                            <span>我同意&nbsp;
-                                <a href="http://www.2shoujie.com/publish_rule" target="_top">商品发布规则</a></span>
-                        </label>
-                    </div> -->
-                    <input id="school_id" value="1" type="hidden">
-                    <input id="user_school_id" value="1" type="hidden">
+                    
+                   
                     <button type="button" class="form-submit" onclick="pre_release();">马上发布</button>
                   </div>
             </div>

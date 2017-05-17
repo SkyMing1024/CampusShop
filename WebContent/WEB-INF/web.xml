@@ -144,4 +144,14 @@
     <servlet-name>OrderServlet</servlet-name>
     <url-pattern>/order</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>RealseProductServlet</display-name>
+    <servlet-name>RealseProductServlet</servlet-name>
+    <servlet-class>indi.mt.shop.servlet.RealseProductServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RealseProductServlet</servlet-name>
+    <url-pattern>/realseproduct</url-pattern>
+  </servlet-mapping>
 </web-app>

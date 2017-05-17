@@ -67,13 +67,6 @@ function initProductWithUserInfo(){
 			)
 			
 			
-			
-			
-			
-			
-			
-			//$("div[class='discount']").html('<span class="buy-price">原价：'+resp.buyPrice+'</span><span class="ershou-price">步行街价：'+resp.salePrice+'</span> ')
-			
 		}
 	});
 	

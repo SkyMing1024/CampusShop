@@ -56,8 +56,15 @@ var catSelect=function(){
             $viceCat.children('.select').removeClass("show");
             $('#cat_l').val($(this).attr("value"));
         })
-        $(document).click(function(){ if ($(event.srcElement).is(".goods-cat .form-value,.goods-cat .form-value *,goods-cat form-value-l,.goods-cat .form-value-l *")) {  return false; } else { $mainCat.children('.select').css('display','none');$viceCat.children('.select').removeClass("show"); } });
-    }
+        $(document).click(function() {
+		    if ($(event.srcElement).is(".goods-cat .form-value,.goods-cat .form-value *,goods-cat form-value-l,.goods-cat .form-value-l *")) {
+		        return false;
+		    } else {
+		        $mainCat.children('.select').css('display', 'none');
+		        $viceCat.children('.select').removeClass("show");
+		    }
+		});
+}
 var addrSelect=function(){
     var $addr=$('.goods-place .form-value');
     $addr.children('.form-input-wr').click(function(){
@@ -117,17 +124,7 @@ var act=function(){
        }
     });
 }
-function submitCaution(elem){
-    $('#'+elem).parent('div').css({
-        'background-color': 'rgb(255,233,236)',
-        'border-color':'rgb(235,80,83)'
-    });
-    $('#'+elem).parent('div').addClass('form-alert');
-    if(!$('#'+elem).attr("placeholder")==""){
-        $('#'+elem).attr("place",$('#'+elem).attr("placeholder"));
-    }
-    $('#'+elem).attr("placeholder","");
-}
+
 
 var submitAct=function(){
     $('.form-wr form').submit(function(){
@@ -390,6 +387,19 @@ function pre_release(){
     release(school_id);
 }
 
+
+
+function submitCaution(elem){
+    $('#'+elem).parent('div').css({
+        'background-color': 'rgb(255,233,236)',
+        'border-color':'rgb(235,80,83)'
+    });
+    $('#'+elem).parent('div').addClass('form-alert');
+    if(!$('#'+elem).attr("placeholder")==""){
+        $('#'+elem).attr("place",$('#'+elem).attr("placeholder"));
+    }
+    $('#'+elem).attr("placeholder","");
+}
 function release(school_id) {
     $(".close-container").addClass("hidden");
     var tel = $('#tel').val(),
@@ -406,6 +416,7 @@ function release(school_id) {
             var url = $(img).attr('url');
             if (url.indexOf('qiniu') == -1 &&
                 url.indexOf('goods_image') == -1) {
+                //上传失败
                 upload_success = 0;
             } else {
                 images[j++] = url;
@@ -449,11 +460,11 @@ function release(school_id) {
     $(".form-submit").attr("data-flag","1");
     //提交表单
     $.post(
-        '/goods/release',
+        'url',
         {
-            goods_name : name,
-            goods_detail : desc,
-            goods_price : price,
+            pname : name,
+            pdesc : desc,
+             : price,
             goods_trade_place : trade_place,
             goods_is_discount : discount,
             goods_class_id : goods_class_id,
