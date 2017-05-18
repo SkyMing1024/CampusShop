@@ -8,6 +8,10 @@ public class UserService {
 	static UserDaoImpl userDaoImpl = new UserDaoImpl();
 	
 	
+	public void  updateUserInfo(User user) {
+		userDaoImpl.updateUser(user);
+	}
+	
 	public void addPointBySell(String pid){
 		userDaoImpl.addPointBySell(pid);
 	}

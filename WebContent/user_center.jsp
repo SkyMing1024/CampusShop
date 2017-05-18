@@ -8,12 +8,14 @@
 
 <link media="all" href="css/user_center.css" type="text/css" rel="stylesheet">
 <link media="all" href="${pageContext.request.contextPath}/css/index.css" type="text/css" rel="stylesheet">
-    <script  src="${pageContext.request.contextPath}/js/jquery-3.1.1.min.js"></script>
-    <script src="${pageContext.request.contextPath}/js/add.js"></script>
+    <script  src="${pageContext.request.contextPath}/js/jquery-1.7.2.min.js"></script>
+     <script src="${pageContext.request.contextPath}/js/add.js"></script> 
     <script src="${pageContext.request.contextPath}/js/hm.js"></script>
     <%-- <script src="${pageContext.request.contextPath}/js/common.js"></script> --%>
     <script src="${pageContext.request.contextPath}/js/common_001.js"></script>
 	<script src="webapp_js/user_center.js"></script>
+	
+	
 </head>
 <body>
 
@@ -21,7 +23,7 @@
               <div id="have_login" class="clearfix">
                 <div id="person_info" class="clearfix">
                     <a href="http://hust.2shoujie.com/user/level">
-                    	<img  class="avatar" src="imgs/avatatar1">
+                    	<img  class="avatar" src="imgs/avatar1.png">
                     </a>
                     <div class="person_name">
                     	<a href="#">'+userId+'</a>
@@ -85,7 +87,7 @@
     </div>
 </div>
         <div id="my_info">
-            <!-- <div id="account_info">
+            <!--  <div id="account_info">
                 <h2>账户信息</h2>
                 <ul class="infos">
                     <li>账号</li>
@@ -115,7 +117,28 @@
                         <input value="" id="qq" type="text">
                     </li>
                 </ul>
-            </div> -->
+                <ul class="infos">
+                    <li>学院</li>
+                    <li class="right_info">
+                        <span id="college_span">信息学院</span>
+                        <input value="" id="college" type="text">
+                    </li>
+                </ul>
+                <ul class="infos">
+                    <li>年级</li>
+                    <li class="right_info">
+                        <span id="grade_span">2013级</span>
+                        <input value="" id="grade" type="text">
+                    </li>
+                </ul>
+                <ul class="infos">
+                    <li>校区</li>
+                    <li class="right_info">
+                        <span id="area_span">2013级</span>
+                        <input value="" id="area" type="text">
+                    </li>
+                </ul>
+            </div>  -->
         </div>
         <ul id="middle_nav" class="clearfix">
     

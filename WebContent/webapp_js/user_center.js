@@ -7,9 +7,7 @@ function getUrlParam(name) {
 var userid = getUrlParam('id');
 
 $(document).ready(function(){
-
 	inituser(userid);
-	
 	inituserpros(userid);
 })
 
@@ -24,14 +22,19 @@ function inituser(id){
 		var tel = resp.tel;
 		var qq = resp.qq;
 		var photo = resp.photo;
-		
-		var myinfo=$('<div id="account_info"><h2>账户信息</h2><ul class="infos"><li>账号</li> '
-		+'<li class="right_info">'+id+'</li></ul></div><div id="base_info"><h2>基本信息<span id="edit_info">编辑</span> '
-		+'<span id="save_info">保存</span></h2><ul class="infos"><li>昵称</li><li class="right_info"> '
-		+'<span id="nickname_span">'+name+'</span><input value="'+name+'" id="nickname"type="text"></li></ul> '
-		+'<ul class="infos"><li>手机</li><li class="right_info"><span id="phone_span">'+tel+'</span> '
-		+'<input value="'+tel+'" id="phone"type="text"></li></ul><ul class="infos"><li>QQ</li><li class="right_info"> '
-		+'<span id="qq_span">'+qq+'</span><input value="'+qq+'" id="qq"type="text"></li></ul></div> ')
+		var college = resp.college;
+		var grade = resp.grade;
+		var area = resp.area;
+		var myinfo=$('<div id="account_info"><h2>账户信息</h2><ul class="infos"><li>账号</li> '+
+		'<li class="right_info">'+id+'</li></ul></div><div id="base_info">' +
+		'<h2>基本信息<span id="edit_info">编辑</span><span id="save_info">保存</span></h2>' +
+		'<ul class="infos"><li>昵称</li><li class="right_info"><span id="nickname_span">'+name+'</span><input value="'+name+'" id="nickname"type="text"></li></ul> '+
+		'<ul class="infos"><li>手机</li><li class="right_info"><span id="tel_span">'+tel+'</span><input value="'+tel+'" id="tel"type="text"></li></ul>' +
+		'<ul class="infos"><li>QQ</li><li class="right_info"><span id="qq_span">'+qq+'</span><input value="'+qq+'" id="qq"type="text"></li></ul>' +
+		'<ul class="infos"><li>学院</li><li class="right_info"><span id="col_span">'+college+'</span><input value="'+college+'" id="col"type="text"></li></ul>'+ 
+		'<ul class="infos"><li>年级</li><li class="right_info"><span id="grade_span">'+grade+'</span><input value="'+grade+'"id="grade"type="text"></li></ul>'+ 
+		'<ul class="infos"><li>校区</li><li class="right_info"><span id="area_span">'+area+'</span><input value="'+area+'"id="area"type="text" placeholder="青山/黄家湖"></li></ul>'+		
+		'</div> ')
 		
 		//$("#user_photo").html('<img id="origin_ph" src="imgs/'+photo+'" alt="大头像">')
 		
@@ -45,8 +48,8 @@ function inituser(id){
 		$("#my_info").append(myinfo);
 		}
 	});
-
 }
+
 
 function inituserpros(uid){
 	$.ajax({

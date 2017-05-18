@@ -154,4 +154,14 @@
     <servlet-name>RealseProductServlet</servlet-name>
     <url-pattern>/realseproduct</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>UserEditServlet</display-name>
+    <servlet-name>UserEditServlet</servlet-name>
+    <servlet-class>indi.mt.shop.servlet.UserEditServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UserEditServlet</servlet-name>
+    <url-pattern>/useredit</url-pattern>
+  </servlet-mapping>
 </web-app>

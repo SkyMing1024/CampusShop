@@ -39,6 +39,7 @@ function student_id(){
 }
 function edit_info(){
     $("#edit_info").bind('click',function(){
+	alert("edit-btn")
         $(this).css({
             display: "none"
         })
@@ -53,25 +54,32 @@ function edit_info(){
         })
     });
     $("#save_info").bind('click',function(){
+    	alert("save-btn")
         var nickname = $("#nickname").val(),
-            phone = $("#phone").val(),
-            qq = $("#qq").val();
+            tel = $("#tel").val(),
+            qq = $("#qq").val(),
+            college=$("#col").val(),
+            grade=$("#grade").val(),
+            area=$("#area").val()
         $.post(
-            '/user/modify',
+            'useredit',
             {
-                user_qq : qq,
-                user_phone_number : phone,
-                user_nickname : nickname
+                name : nickname,
+                qq : qq,
+                tel : tel,
+                college:college,
+                grade:grade,
+                area:area
             },
-            function(res) {
-                res = $.parseJSON(res);
-                if (res.code != 0) {
-                    alert(res.msg);
-                    return;
-                }
+            function(resp) {
+                
                 $("#qq_span").text(qq);
-                $("#phone_span").text(phone);
+                $("#tel_span").text(tel);
                 $("#nickname_span").text(nickname);
+                $("#col_span").text(college);
+                $("#grade_span").text(grade);
+                $("#area_span").text(area);
+                alert(resp);
                 $("#save_info").css({
                     display: "none"
                 });

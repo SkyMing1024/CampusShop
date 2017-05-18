@@ -43,8 +43,8 @@ public class UserDaoImpl extends BaseDao<User>implements UserDao {
 	//用户完善个人信息
 	@Override
 	public void updateUser(User user) {
-		String sql="UPDATE user set email=?,area=?,college=?,grade=?,tel=?,QQ=?,photo=? WHERE id=?";
-		update(sql, user.getEmail(),user.getArea(),user.getCollege(),user.getGrade(),user.getTel(),user.getQq(),user.getPhoto(),user.getId());
+		String sql="UPDATE user set name=?,email=?,area=?,college=?,grade=?,tel=?,QQ=? WHERE id=?";
+		update(sql, user.getName(),user.getEmail(),user.getArea(),user.getCollege(),user.getGrade(),user.getTel(),user.getQq(),user.getId());
 	}
 
 	@Override
