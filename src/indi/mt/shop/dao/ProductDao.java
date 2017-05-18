@@ -6,6 +6,8 @@ import indi.mt.shop.domain.Product;
 
 public interface ProductDao {
 	
+	public List<Product> searchProducts(String keyword);
+	
 	//擦亮
 	public void refreshProduct(String pid);
 	

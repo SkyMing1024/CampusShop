@@ -15,6 +15,13 @@ public class ProductListService {
 	
 	static ProductWithUserInfoDaoImpl productWithUserInfoDaoImpl= new ProductWithUserInfoDaoImpl();
 	
+	
+	
+	//模糊查询商品列表
+	public List<Product> searchProductsOnsale(String keyword){
+		return productDaoImpl.searchProducts(keyword);
+	}
+	
 	//售出
 	public void sellProduct(String pid){
 		productDaoImpl.sellProduct(pid);
@@ -42,11 +49,7 @@ public class ProductListService {
 		return productWithUserInfoDaoImpl.getProductWithUserInfo(pid);
 	}
 	
-	public List<Product> getProductListBySearchKeyword(String keywor){
-		List<Product> list = new ArrayList<>();
-		
-		return list ;
-	}
+	
 	
 	public List<Product> getProductsListOrder(String rank){
 		List<Product> list = new ArrayList<>();

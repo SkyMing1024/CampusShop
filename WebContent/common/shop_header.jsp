@@ -22,7 +22,17 @@ main.css?v=201506100001:20
     zoom: 1;
 }
 </style>
-<%-- <link media="all" href="${pageContext.request.contextPath}/css/index.css" type="text/css" rel="stylesheet"> --%>
+
+
+
+<script type="text/javascript">
+function searchPro(){
+	var keyword=$("#keyword").val()
+	window.location.href="product_list.jsp?keyword="+keyword;
+}
+
+
+</script>
 </head>
 <body>
 	<header class="ease2">
@@ -36,15 +46,15 @@ main.css?v=201506100001:20
 	            <img src="imgs/2shoujie_web_title.png" alt="wuster专属校园二手物品交易平台">
 	        </a>
 	        <div class="search-box-wr ease2">
-	            <form class="search-box center" action="" method="post">
-	               <button type="submit" class="search-submit" id="search-button">搜索</button> 
+	            <div class="search-box center" >
+	               <button  class="search-submit" id="search-button" onclick="searchPro()">搜索</button> 
 	                <div class="input-wr">
 	                    <img class="search-icon" src="imgs/search-icon.png">
 	                    <div class="search-input">
 	                    <input name="keyword" id="keyword" x-webkit-speech="" placeholder="搜索你想要的商品" value="" type="text">
 	                    </div>
 	                </div>
-	            </form>
+	            </div>
 
 	            <div class="search-hots center ease2">
 	                <span>热门：</span>

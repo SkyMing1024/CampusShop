@@ -25,8 +25,6 @@ public class ProductListServlet extends HttpServlet {
 		
 		String urlValCat = request.getParameter("cat");
 		String urlValRank = request.getParameter("rank");
-		System.out.println(urlValCat);
-		System.out.println(urlValRank);
 		
 		if ((urlValCat!=""&&!urlValCat.equals("")&&!"null".equals(urlValCat)||(urlValRank == ""&&urlValRank.equals("")&&"null".equals(urlValRank)))) {
 			int cid=Integer.parseInt(urlValCat);

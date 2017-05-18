@@ -29,7 +29,8 @@ public class Test {
 	
 	@org.junit.Test
 	public void testDeletePro(){
-		new ProductListService().deleteProductByPid("4");
+		List<Product> list = new ProductListService().searchProductsOnsale("手机");
+		System.out.println(list);
 	}
 	
 	

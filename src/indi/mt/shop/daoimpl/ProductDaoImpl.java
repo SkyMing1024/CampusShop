@@ -185,4 +185,15 @@ public class ProductDaoImpl extends BaseDao<Product> implements ProductDao{
 		String sql ="UPDATE products p SET p.state = 0 WHERE p.pid = ?";
 		update(sql, pid);
 	}
+
+	@Override
+	public List<Product> searchProducts(String keyword) {
+		String sql="SELECT p.pid,p.pname,p.buy_price  buyPrice,p.sale_price  salePrice,p.pdesc,p.pimage, "
+				+ " p.beloneto,p.cid2,p.read_times  readTimes,p.state,p.isHot,p.creat_time  creatTime "
+				+ " FROM products  p WHERE pdesc LIKE ? OR pname LIKE ? AND p.state=1 ORDER BY creatTime";
+		return queryList(sql, "%"+keyword+"%","%"+keyword+"%");
+	}
+	
+	
+	
 }

@@ -464,7 +464,7 @@ function release(school_id) {
         {
             pname : name,
             pdesc : desc,
-             : price,
+            price : price,
             goods_trade_place : trade_place,
             goods_is_discount : discount,
             goods_class_id : goods_class_id,
@@ -481,8 +481,8 @@ function release(school_id) {
             } else {
                 window.location.href = res.data.goods_url;
             }
-        }
-    );
+     });
+     window.location.href="index.jsp";
 }
 
 //编辑商品

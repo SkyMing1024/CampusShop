@@ -5,7 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>商品发布表单</title>
-		<!-- <script src="js/hm.js"></script>
+		<script src="js/hm.js"></script>
         <script src="js/add.js"></script>
         <script src="js/release.js"></script>
         <script src="js/c.js"></script>
@@ -13,33 +13,85 @@
         
         <script src="js/zh_cn.js"></script>
         <script src="js/qiniu.min.js"></script>
-        <script src="js/plupload.full.min.js"></script> -->
+        <script src="js/plupload.full.min.js"></script> 
+		
+		
+		 <script type="text/javascript" src="webapp_js/product_release.js"></script>
 
-		<script src="js/releasepro_js/hm.js"></script>
-        <script src="js/releasepro_js/add.js"></script>
-        <script src="js/releasepro_js/release.js"></script>
-        <script src="js/releasepro_js/c.js"></script>
-        <script src="js/releasepro_js/common.js"></script>
-        
-        <script src="js/releasepro_js/zh_cn.js"></script>
-        <script src="js/releasepro_js/qiniu.min.js"></script>
-        <script src="js/releasepro_js/plupload.full.min.js"></script>
-
-        <script  src="js/jquery-3.1.1.min.js"></script>
+        <!-- <script  src="js/jquery-3.1.1.min.js"></script> -->
+		<script type="text/javascript" src="js/jquery-1.5.2.min.js"></script>
 
         <link media="all" href="css/release_product.css" type="text/css" rel="stylesheet">
 		<link media="all" href="css/index.css" type="text/css" rel="stylesheet">
 
-<script>
-		var str="${sessionScope.user.name}"
+<script type="text/javascript">
+		 var str="${sessionScope.user.name}"
 			if(!str){
 				alert("请您先登录");
 				window.location.href="login.jsp";
+			} 
+			
+		 var currentShowcid2=0;
+			$(document).ready(function(){
+			   $("#cid").change(function(){
+				   $("#cid option").each(function(i,o){
+					   if($(this).attr("selected"))
+					   {
+						   $(".cid2").hide();
+						   $(".cid2").eq(i).show();
+						   currentShowcid2=i;
+					   }
+				   });
+			   });
+			   $("#cid").change();
+			});
+			
+			/* function getSelectValue(){
+				alert("1级="+$("#cid").val());
+				$(".cid2").each(function(i,o){
+					 if(i == currentShowcid2){
+						 
+						alert("2级="+$(".cid2").eq(i).val());
+						cid2=$(".cid2").eq(i).val();
+					 }
+			   });
+				alert("分类1："+cid2)
+			} */
+			
+			function productrelease(){
+				var cid2=0;
+				var pname=$("#title").val(),
+					pdesc=$("#desc").val(),
+					buyPrice=$("#buyPrice").val(),
+					salePrice=$("#salePrice").val();
+				$(".cid2").each(function(i,o){
+					 if(i == currentShowcid2){
+						cid2=$(".cid2").eq(i).val();
+					 }
+			   });
+				alert("分类2："+cid2+"/n"+pname+"/n"+pdesc+"/n"+buyPrice+"/n"+salePrice)
+				
+				$.post(
+				        "productrelease",
+				        {
+				        	pname : pname,
+				            pdesc : pdesc,
+				            buyPrice : buyPrice,
+				            salePrice : salePrice,
+				            cid2 : cid2,
+				           
+				        },
+				        function(res) {
+				            res = $.parseJSON(res);
+				            if (res.code != 0) {
+				                alert(res.msg);
+				                $('.form-submit').removeAttr('disabled', false);
+				            } else {
+				                window.location.href = res.data.goods_url;
+				            }
+				        }
+				    );
 			}
-		
-		
-		
-	
 </script>		
 </head>
 	
@@ -137,152 +189,84 @@
                         <!--选择分类信息 -->
                         <div class="form-item m goods-cat">
                             <div class="form-key">
-                                <span>分类</span></div>
-                            <div class="form-value">
-                                <div class="form-input-wr">
-                                    <span>请选择</span>
-                                    <input id="cat" name="cat" value="" type="hidden"></div>
-                                <ul class="select">
-                                    <li pk="item1" value="1">
-                                        <span>校园代步</span></li>
-                                    <li pk="item4" value="4">
-                                        <span>手机</span></li>
-                                    <li pk="item5" value="5">
-                                        <span>电脑</span></li>
-                                    <li pk="item8" value="8">
-                                        <span>数码配件</span></li>
-                                    <li pk="item15" value="15">
-                                        <span>数码</span></li>
-                                    <li pk="item23" value="23">
-                                        <span>电器</span></li>
-                                    <li pk="item30" value="30">
-                                        <span>运动健身</span></li>
-                                    <li pk="item39" value="39">
-                                        <span>衣物伞帽</span></li>
-                                    <li pk="item45" value="45">
-                                        <span>图书教材</span></li>
-                                    <li pk="item59" value="59">
-                                        <span>租赁</span></li>
-                                    <li pk="item71" value="71">
-                                        <span>生活娱乐</span></li>
-                                    <li pk="item999" value="999">
-                                        <span>其他</span></li>
-                                </ul>
+                                <span>分类</span>
                             </div>
-                            <div class="form-value-l hide">
-                                <div class="form-input-l-wr">
-                                    <span>请选择</span>
-                                    <input id="cat_l" name="cat_l" value="" type="hidden"></div>
-                                <ul class="select hide">
-                                    <li class="item1 hide" value="2">
-                                        <span>自行车</span></li>
-                                    <li class="item1 hide" value="3">
-                                        <span>电动车</span></li>
-                                    <li class="item5 hide" value="6">
-                                        <span>笔记本</span></li>
-                                    <li class="item5 hide" value="7">
-                                        <span>台式机</span></li>
-                                    <li class="item8 hide" value="16">
-                                        <span>耳机</span></li>
-                                    <li class="item8 hide" value="17">
-                                        <span>移动硬盘</span></li>
-                                    <li class="item8 hide" value="18">
-                                        <span>键盘</span></li>
-                                    <li class="item8 hide" value="19">
-                                        <span>鼠标</span></li>
-                                    <li class="item8 hide" value="20">
-                                        <span>充电器</span></li>
-                                    <li class="item8 hide" value="21">
-                                        <span>显示器</span></li>
-                                    <li class="item8 hide" value="22">
-                                        <span>其他</span></li>
-                                    <li class="item8 hide" value="1062">
-                                        <span>移动电源</span></li>
-                                    <li class="item15 hide" value="9">
-                                        <span>mp3/mp4</span></li>
-                                    <li class="item15 hide" value="10">
-                                        <span>相机</span></li>
-                                    <li class="item15 hide" value="11">
-                                        <span>单反</span></li>
-                                    <li class="item15 hide" value="12">
-                                        <span>游戏机</span></li>
-                                    <li class="item15 hide" value="13">
-                                        <span>平板</span></li>
-                                    <li class="item15 hide" value="14">
-                                        <span>其他</span></li>
-                                    <li class="item23 hide" value="31">
-                                        <span>电扇</span></li>
-                                    <li class="item23 hide" value="32">
-                                        <span>台灯</span></li>
-                                    <li class="item23 hide" value="33">
-                                        <span>洗衣机</span></li>
-                                    <li class="item23 hide" value="34">
-                                        <span>电吹风</span></li>
-                                    <li class="item23 hide" value="35">
-                                        <span>电水壶</span></li>
-                                    <li class="item23 hide" value="36">
-                                        <span>空调</span></li>
-                                    <li class="item23 hide" value="37">
-                                        <span>电视</span></li>
-                                    <li class="item23 hide" value="38">
-                                        <span>其他</span></li>
-                                    <li class="item30 hide" value="24">
-                                        <span>篮球</span></li>
-                                    <li class="item30 hide" value="25">
-                                        <span>足球</span></li>
-                                    <li class="item30 hide" value="26">
-                                        <span>球拍</span></li>
-                                    <li class="item30 hide" value="27">
-                                        <span>哑铃</span></li>
-                                    <li class="item30 hide" value="28">
-                                        <span>轮滑</span></li>
-                                    <li class="item30 hide" value="29">
-                                        <span>其他</span></li>
-                                    <li class="item39 hide" value="46">
-                                        <span>上衣</span></li>
-                                    <li class="item39 hide" value="47">
-                                        <span>裤子</span></li>
-                                    <li class="item39 hide" value="48">
-                                        <span>背包</span></li>
-                                    <li class="item39 hide" value="49">
-                                        <span>雨伞</span></li>
-                                    <li class="item39 hide" value="50">
-                                        <span>鞋</span></li>
-                                    <li class="item39 hide" value="51">
-                                        <span>帽子</span></li>
-                                    <li class="item39 hide" value="52">
-                                        <span>其他</span></li>
-                                    <li class="item45 hide" value="40">
-                                        <span>教材</span></li>
-                                    <li class="item45 hide" value="41">
-                                        <span>考研</span></li>
-                                    <li class="item45 hide" value="42">
-                                        <span>托福/雅思/GRE</span></li>
-                                    <li class="item45 hide" value="43">
-                                        <span>课外书</span></li>
-                                    <li class="item45 hide" value="44">
-                                        <span>其他</span></li>
-                                    <li class="item59 hide" value="60">
-                                        <span>租房</span></li>
-                                    <li class="item59 hide" value="61">
-                                        <span>服装</span></li>
-                                    <li class="item59 hide" value="62">
-                                        <span>道具</span></li>
-                                    <li class="item59 hide" value="63">
-                                        <span>其他</span></li>
-                                    <li class="item71 hide" value="72">
-                                        <span>乐器</span></li>
-                                    <li class="item71 hide" value="73">
-                                        <span>日常用品</span></li>
-                                    <li class="item71 hide" value="74">
-                                        <span>虚拟账号</span></li>
-                                    <li class="item71 hide" value="75">
-                                        <span>会员卡</span></li>
-                                    <li class="item71 hide" value="76">
-                                        <span>其他</span></li>
-                                    <li class="item71 hide" value="1060">
-                                        <span>化妆品</span></li>
-                                </ul>
+                             <div class="form-value">
+                                <div class="form-input-wr">
+    <select id="cid"> 
+		<option>---大类----</option> 
+		<option value="1">手机</option> 
+		<option value="2">电脑</option> 
+		<option value="3">影音娱乐</option>
+		<option value="4">数码配件</option> 
+		<option value="5">运动健身</option>
+		<option value="6">衣物鞋帽</option> 
+		<option value="7">生活娱乐</option> 
+		<option value="8">图书教材</option> 
+		<option value="9">交通出行</option> 
+		<option value="10">个人技能</option> 
+		<option value="11">其它</option> 	   
+   </select> 
+   <select class="cid2"> 
+   		<option>----小类----</option> 
+   </select> 
+   <select class="cid2"> 
+       <option value="101">手机</option> 
+       <option value="102">手机配件</option> 
+       
+   </select>  
+   <select class="cid2"> 
+       <option value="201">笔记本</option> 
+       <option value="202">台式机</option>
+	   <option value="203">平板</option> 	   
+   </select> 
+   <select class="cid2"> 
+        <option value="301">耳机</option>
+		<option value="302">MP3</option> 
+		<option value="303">游戏机</option> 
+		<option value="304">键盘</option>
+		<option value="305">鼠标</option> 		
+   </select>
+   <select class="cid2"> 
+        <option value="401">硬盘</option>
+		<option value="402">相机</option> 
+		<option value="403">显示器</option>  		
+   </select>
+   <select class="cid2"> 
+        <option value="501">篮球</option>
+		<option value="502">足球</option> 
+		<option value="503">球拍</option> 
+   </select>
+   <select class="cid2"> 
+        <option value="601">上衣</option>
+		<option value="602">裤子</option> 
+		<option value="603">背包</option> 
+		<option value="604">雨伞</option>
+		<option value="605">鞋</option>
+		<option value="606">配饰</option>
+   </select>
+   <select class="cid2"> 
+        <option value="701">乐器</option>
+		<option value="702">虚拟账号</option> 
+		<option value="703">会员卡</option> 
+		<option value="704">化妆品</option> 		
+   </select>
+   <select class="cid2"> 
+        <option value="801">考研资料</option>
+		<option value="802">教材</option> 
+		<option value="803">课外书</option>  		
+   </select>
+   <select class="cid2"> 
+        <option value="901">自行车</option>
+		<option value="902">电动车</option> 
+		<option value="903">公交卡</option>  		
+   </select>
+   <select class="cid2"> 
+		<option value="1001">摄影</option> 
+		<option value="1002">绘画</option> 		
+   </select>
+							   <INPUT TYPE="button" VALUE="点我" ONCLICK="getSelectValue();">
+							    </div>
                             </div>
                         </div> 
                         
@@ -291,7 +275,7 @@
                     </div>
                     
                    
-                    <button type="button" class="form-submit" onclick="pre_release();">马上发布</button>
+                    <button type="button" class="form-submit" onclick="productrelease();">马上发布</button>
                   </div>
             </div>
         </div>
