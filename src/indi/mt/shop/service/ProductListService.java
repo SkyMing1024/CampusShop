@@ -15,7 +15,10 @@ public class ProductListService {
 	
 	static ProductWithUserInfoDaoImpl productWithUserInfoDaoImpl= new ProductWithUserInfoDaoImpl();
 	
-	
+	//阅读次数+1
+	public void addReadTimes(String pid) {
+		productDaoImpl.addReadTimes(pid);
+	}
 	
 	//模糊查询商品列表
 	public List<Product> searchProductsOnsale(String keyword){

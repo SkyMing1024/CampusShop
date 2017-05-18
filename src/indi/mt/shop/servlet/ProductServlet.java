@@ -20,10 +20,11 @@ public class ProductServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+		ProductListService ps = new ProductListService();
 		String pid = request.getParameter("pid");
 		System.out.println(pid);
-		ProductWithUserInfo p = new ProductListService().getProductWithUserInfoById(Integer.parseInt(pid));
+		ProductWithUserInfo p = ps.getProductWithUserInfoById(Integer.parseInt(pid));
+		ps.addReadTimes(pid);
 		
 		Gson gson = new Gson();
 		String json = gson.toJson(p);

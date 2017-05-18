@@ -67,4 +67,7 @@ public interface ProductDao {
 	//售出商品，将商品状态改为0
 	void sellProduct(String pid);
 	
+	void addReadTimes(String pid);
+	
+	
 }

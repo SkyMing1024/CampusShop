@@ -193,6 +193,11 @@ public class ProductDaoImpl extends BaseDao<Product> implements ProductDao{
 				+ " FROM products  p WHERE pdesc LIKE ? OR pname LIKE ? AND p.state=1 ORDER BY creatTime";
 		return queryList(sql, "%"+keyword+"%","%"+keyword+"%");
 	}
+
+	@Override
+	public void addReadTimes(String pid) {
+		String sql = "UPDATE products p SET p.read_times = p.read_times+1 WHERE p.pid=?";
+		update(sql, pid);	}
 	
 	
 	

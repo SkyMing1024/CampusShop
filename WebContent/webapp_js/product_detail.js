@@ -1,9 +1,7 @@
 $(function(){
 	initProductWithUserInfo();
 	
-	$("#buy-button").click(function(){
-		alert("kasd:"+proInfo.pid);
-	})
+	
 	
 })
 
@@ -30,7 +28,8 @@ function initProductWithUserInfo(){
 		success:function(resp){
 			
 			proInfo = resp;
-			
+			tel= resp.tel.substring(0,3);
+			qq=resp.qq.substring(0,4);
 			$(".bigger-photo-box").html(' <a class="bigger-photo hide show" rel="img_group" href="#">' +
 					' <img class="bigger" src=" '+resp.pimage+'"  alt=" '+resp.pname+' "></a> '
 			);
@@ -44,8 +43,8 @@ function initProductWithUserInfo(){
 					
 			).after(
 					' <li class="ershou-tel"><div class="name"><span>联系方式</span></div> '+
-					' <div class="value">手机：<span class="user-num"id="user_tel">'+resp.tel+'</span>'+
-					' &nbsp;&nbsp;QQ:<span class="user-num"id="user_qq">'+resp.qq+'</span></div></li>'
+					' <div class="value">手机：<span class="user-num"id="user_tel" ">'+tel+'********</span>'+
+					' &nbsp;&nbsp;QQ:&nbsp;<span class="user-num"id="user_qq">'+qq+'*****</span></div></li>' 
 			).after(
 
 					'<li class="ershou-place"><div class="name"><span>交易地点</span></div> '+
