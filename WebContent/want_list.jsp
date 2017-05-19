@@ -34,32 +34,7 @@
                         
                         
                         <li class="want-item">
-                            <div class="want-li clearfix">
-                                <div class="left">
-                                    <a href="http://hust.2shoujie.com/profile/96872">
-                                        <img src="imgs/avatar2.png" alt="头像"></a>
-                                </div>
-                                <div class="right">
-                                    <h4 class="want-name">[求购]
-                                        <span>iPhone6</span></h4>
-                                    <p class="want-detail">收一台iPhone6 或者是 6plus</p>
-                                    <p class="want-attr">
-                                        <span>期望价格</span>
-                                        <span class="want-price">¥1500</span>
-                                        <span>交易地点：</span>
-                                        <span class="want-add">韵苑</span>
-                                        <span>2017-02-28 23:58:15</span></p>
-                                    <p class="want-contact">
-                                        <a href="http://hust.2shoujie.com/profile/96872" class="want-person">太尊</a>
-                                        <span class="want-cont">
-                                            <span class="want-tel">
-                                                <span class="mr10">手机：15072139998</span>
-                                                <span>QQ：363784838</span></span>
-                                        </span>
-                                    </p>
-                                    
-                                </div>
-                            </div>
+                            
                         </li>
                     </ul>
                 </div>

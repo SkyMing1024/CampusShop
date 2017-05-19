@@ -39,7 +39,6 @@ function student_id(){
 }
 function edit_info(){
     $("#edit_info").bind('click',function(){
-	alert("edit-btn")
         $(this).css({
             display: "none"
         })
@@ -54,7 +53,6 @@ function edit_info(){
         })
     });
     $("#save_info").bind('click',function(){
-    	alert("save-btn")
         var nickname = $("#nickname").val(),
             tel = $("#tel").val(),
             qq = $("#qq").val(),
