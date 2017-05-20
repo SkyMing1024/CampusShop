@@ -171,7 +171,7 @@ public class ProductDaoImpl extends BaseDao<Product> implements ProductDao{
 	@Override
 	public List<Product> getProductsByUserId(String uid) {
 		String sql = "SELECT p.pid,p.pname,p.buy_price buyPrice,p.sale_price salePrice,p.pdesc,p.pimage,p.beloneto,p.cid2, "
-					+ "p.read_times readTimes,p.state,p.isHot,p.creat_time creatTime FROM products AS p WHERE p.beloneto = ? ";
+					+ "p.read_times readTimes,p.state,p.isHot,p.creat_time creatTime FROM products AS p WHERE p.beloneto = ? ORDER BY p.state DESC";
 		return queryList(sql, uid);
 	}
 

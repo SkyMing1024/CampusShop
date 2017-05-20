@@ -8,7 +8,6 @@ import org.apache.commons.dbutils.handlers.BeanListHandler;
 
 import indi.mt.shop.dao.WantInfoDao;
 import indi.mt.shop.daoimpl.AdminDaoImpl;
-import indi.mt.shop.daoimpl.OrderDaoImpl;
 import indi.mt.shop.daoimpl.ProductDaoImpl;
 import indi.mt.shop.daoimpl.ProductWithUserInfoDaoImpl;
 import indi.mt.shop.daoimpl.UserDaoImpl;
@@ -18,7 +17,6 @@ import indi.mt.shop.domain.Order;
 import indi.mt.shop.domain.Product;
 import indi.mt.shop.domain.ProductWithUserInfo;
 import indi.mt.shop.domain.User;
-import indi.mt.shop.domain.WantInfoWithUserInfo;
 import indi.mt.shop.service.OrderService;
 import indi.mt.shop.service.ProductListService;
 import indi.mt.shop.service.UserService;
@@ -28,10 +26,15 @@ import indi.mt.shop.utils.JDBCTools;
 public class Test {
 	
 	@org.junit.Test
+	public void  testRandomNum() {
+		//int i = (int) (Math.random()*8+1);
+		String photo = "avatar"+String.valueOf((int) (Math.random()*8+1))+".png";
+		System.out.println(photo);
+	}
+	
+	@org.junit.Test
 	public void testAddProduct(){
 		Product p = new Product(null, "最新版解忧杂货店", 40, 25.0,  "单元测试商品新增商品解忧杂货店", "imgs_products/jieyouzahuodian.png", "201322146108",803, 0, null, null, null);
-		
-		
 		long pid = new ProductDaoImpl().addProductReturnKey(p);
 		System.out.println("p:"+p);
 		System.out.println(pid);

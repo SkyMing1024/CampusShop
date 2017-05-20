@@ -26,7 +26,7 @@ public class UserServlet extends HttpServlet {
 		String uid = request.getParameter("uid");
 		Gson gson = new Gson();
 		String json = null;
-
+		
 		if(Integer.parseInt(flag)==1){
 			User user = new UserService().getUserById(uid);
 			json = gson.toJson(user);

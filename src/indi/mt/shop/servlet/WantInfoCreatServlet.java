@@ -22,7 +22,7 @@ public class WantInfoCreatServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
 		User session =(User) request.getSession().getAttribute("user");
-		String title = "[求购]"+request.getParameter("title");
+		String title = request.getParameter("title");
 		String desc = request.getParameter("desc");
 		String trade_place = request.getParameter("trade_place");
 		String price = request.getParameter("price");

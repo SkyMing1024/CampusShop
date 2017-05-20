@@ -39,11 +39,11 @@ public class RegServlet extends HttpServlet {
 		
 		//用户注册
 		if(Integer.parseInt(flag) == 2){
-			String photo = null;
-			
+			String photo = "avatar"+String.valueOf((int) (Math.random()*8+1))+".png";
 			String id = request.getParameter("userid");
 			String pwd = request.getParameter("password");
 			String qq = request.getParameter("qq");
+			user.setPhoto(photo);
 			user.setId(id);
 			user.setPassword(pwd);
 			user.setQq(qq);

@@ -81,8 +81,6 @@ function inituserpros(uid){
 					'&nbsp;&nbsp;<span id="prostate">上架日期：'+resp[i].creatTime+'</span>'+
 					'<span class="enshrine_it" style="color:yellow" );">已售出</span>'+
 					'<span class="enshrine_it make_edition" style="color:red"  onclick="offshelf('+resp[i].pid+');">删除</span>'+
-					'<span class="enshrine_it make_edition" onclick="refresh('+resp[i].pid+');">擦亮</span>'+
-	                '<a href="#" target="_top"><span class="enshrine_it  make_edition">编辑</span></a> '+
 	                '</div></div><a href="product_detail.jsp?pid='+resp[i].pid+'">'+
 	                '<img class="enshr_ph" src="'+resp[i].pimage+'" alt="'+resp[i].pname+'"></a></div>')
 			}
@@ -106,11 +104,10 @@ function offshelf(pid){
     		function(res){
 		        if (res.length > 2) {
 		        	//失败
-		        	alert("if:"+res.length)
+		        	//alert("if:"+res.length)
 		            location.reload();
-		            l
 		        } else {
-		        	alert("else res:"+res.length)
+		        	//alert("else res:"+res.length)
 		        }
     });
 }
