@@ -1,4 +1,4 @@
-package indi.mt.shop.servlet;
+package indi.mt.shop.test;
 
 import java.io.File;
 import java.io.IOException;
@@ -17,12 +17,11 @@ import org.apache.commons.fileupload.servlet.ServletFileUpload;
 import indi.mt.shop.domain.Product;
 import indi.mt.shop.domain.User;
 import indi.mt.shop.service.ProductListService;
-import indi.mt.shop.service.UserService;
 
 /**
- * Servlet implementation class ProductReleaseServlet
+ * Servlet implementation class TestUpLoadServlet
  */
-public class ProductReleaseServlet extends HttpServlet {
+public class TestUpLoadServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     
@@ -131,10 +130,7 @@ public class ProductReleaseServlet extends HttpServlet {
 				Double.parseDouble(buyPrice),
 				Double.parseDouble(salePrice), pdesc, pimage, user.getId(), Integer.parseInt(cid2), 0, null, null, null);
 		System.out.println(product);
-		
 		new ProductListService().addProduct(product);
-		new UserService().addPointByReleaseProduct(user.getId());
-		
 		String url = "user_center.jsp?id="+user.getId();
 		response.sendRedirect(url);
 //        request.getServletContext().getRequestDispatcher(url).forward(

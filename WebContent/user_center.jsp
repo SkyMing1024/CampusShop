@@ -41,7 +41,7 @@
     ﻿<div class="container">
     <div class="main center">
     <!-- 头像设置开始 -->
-        <div class="head-img-box hide" id="head-img-box">
+   <!--      <div class="head-img-box hide" id="head-img-box">
     <div class="wrap-head-img">
         <h3 class="head-title">
             <span>头像设置</span>
@@ -61,7 +61,7 @@
             <a href="javascript:;" id="cancel-img-box" class="btn-cancel">取消</a>
         </div>
     </div>
-</div>
+</div> -->
 <!-- 头像设置结束 -->
 <div class="top clearfix" id ="user-top">
     <div id="user_msg">

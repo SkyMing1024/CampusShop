@@ -23,7 +23,7 @@ public class RegServlet extends HttpServlet {
 		User user = new User();
 		String res = null;
 		String flag = request.getParameter("flag");
-		
+		//注册表单验证
 		if(Integer.parseInt(flag) == 1){
 			String uid = request.getParameter("uid");
 			user = userService.getUserById(uid);
@@ -37,8 +37,10 @@ public class RegServlet extends HttpServlet {
 			out.write(res);
 		}
 		
-		
+		//用户注册
 		if(Integer.parseInt(flag) == 2){
+			String photo = null;
+			
 			String id = request.getParameter("userid");
 			String pwd = request.getParameter("password");
 			String qq = request.getParameter("qq");

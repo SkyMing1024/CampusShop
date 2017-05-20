@@ -28,6 +28,20 @@ import indi.mt.shop.utils.JDBCTools;
 public class Test {
 	
 	@org.junit.Test
+	public void testAddProduct(){
+		Product p = new Product(null, "最新版解忧杂货店", 40, 25.0,  "单元测试商品新增商品解忧杂货店", "imgs_products/jieyouzahuodian.png", "201322146108",803, 0, null, null, null);
+		
+		
+		long pid = new ProductDaoImpl().addProductReturnKey(p);
+		System.out.println("p:"+p);
+		System.out.println(pid);
+		System.out.println("p after insert:"+new ProductDaoImpl().getProductById((int) pid));
+		
+	}
+	
+	
+	
+	@org.junit.Test
 	public void testDeletePro(){
 		List<Product> list = new ProductListService().searchProductsOnsale("手机");
 		System.out.println(list);

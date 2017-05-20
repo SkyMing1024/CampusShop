@@ -12,13 +12,14 @@ public class UserService {
 		userDaoImpl.updateUser(user);
 	}
 	
+	public void addPointByReleaseProduct(String uid){
+		userDaoImpl.addPointByReleaseProduct(uid);
+	}
+	
 	public void addPointBySell(String pid){
 		userDaoImpl.addPointBySell(pid);
 	}
 	
-	public void addPointByRealsePro(String pid){
-		userDaoImpl.addPointByRealsePro(pid);
-	}
 	//擦亮后用户积分+2
 	public void addPointByRefresh(String pid){
 		userDaoImpl.addPointByRefresh(pid);

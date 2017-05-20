@@ -30,7 +30,8 @@
 				alert("请您先登录");
 				window.location.href="login.jsp";
 			} 
-			
+		
+		 var cid2=0;
 		 var currentShowcid2=0;
 			$(document).ready(function(){
 			   $("#cid").change(function(){
@@ -42,21 +43,31 @@
 						   currentShowcid2=i;
 					   }
 				   });
+				   
+				   $(".cid2").each(function(i,o){
+						 if(i == currentShowcid2){
+							cid2=$(".cid2").eq(i).val();
+							$("#category-value").val(cid2)							
+						 }
+				   });
+
 			   });
+			   
 			   $("#cid").change();
 			});
 			
-			/* function getSelectValue(){
-				alert("1级="+$("#cid").val());
-				$(".cid2").each(function(i,o){
-					 if(i == currentShowcid2){
-						 
-						alert("2级="+$(".cid2").eq(i).val());
-						cid2=$(".cid2").eq(i).val();
-					 }
-			   });
-				alert("分类1："+cid2)
-			} */
+			 /* function getSelectValue(){
+			alert("1级="+$("#cid").val());
+			$(".cid2").each(function(i,o){
+				 if(i == currentShowcid2){
+					alert("2级="+$(".cid2").eq(i).val());
+					cid2=$(".cid2").eq(i).val();
+				 }
+		   });
+			alert("分类1："+cid2)
+		}  */
+			
+			
 			
 			function productrelease(){
 				var cid2=0;
@@ -69,7 +80,7 @@
 						cid2=$(".cid2").eq(i).val();
 					 }
 			   });
-				alert("分类2："+cid2+"/n"+pname+"/n"+pdesc+"/n"+buyPrice+"/n"+salePrice)
+				alert("分类2："+cid2+"\n"+pname+"\n"+pdesc+"\n"+buyPrice+"\n"+salePrice)
 				
 				$.post(
 				        "productrelease",
@@ -103,40 +114,19 @@
                 <img class="release-icon-main" src="imgs/release-icon.png" alt="">
                 <div class="wave-fluid"></div>
                 <div class="release-title">发布商品出售</div>
-                <!-- 上传图片开始 -->
-                <div class="upload-wr">
-                    <div class="clone-target">
-                        <div class="photo">
-                            <div>
-                                <img src="imgs/release" alt="" class="image">
-                             </div>
-                            <span class="close"></span>
-                        </div>
-                    </div>
-                    <div class="photo-area init-up">
-                        <div class="upload-area" id="upload-area" style="position: relative;">
-                            <div id="upload" style="z-index: 50;">
-                                <span class="up-bg"></span>
-                                <span class="up-img-bg">
-                                    <i>
-                                    </i>
-                                </span>
-                            </div>
-                            <div id="html5_1bf7kjaid1u048gce9t1r9sk3m3_container" 
-                            	class="moxie-shim moxie-shim-html5" style="position: absolute; top: 2px; left: 0px; 
-                            	width: 160px; height: 160px; overflow: hidden; z-index: 49;">
-                                <input id="html5_1bf7kjaid1u048gce9t1r9sk3m3" style="font-size: 999px; opacity: 0; 
-                                position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;" accept="image/*" 
-                                capture="camera" type="file">
-                                </div>
-                        </div>
-                        <div class="photo-caution">
-                            <span>最多上传四张图片，支持jpg、png、gif格式</span></div>
-                    </div>
-                </div>
-                <!-- 上传图片结束 -->
+                <form action="productrelease" enctype="multipart/form-data" method="post">
                 <div class="form-wr">
                     <div class="form-must-wr">
+                    	
+                    	<div class="form-item l goods-title">
+                            <div class="form-key">
+                                <span>选择商品图片</span></div>
+                            <div class="form-value">
+                                <div class="form-input-wr">
+                                	<input type="file" name="uploadFile" />
+                                	</div>
+                            </div>
+                        </div>
                     	
                         <div class="form-item l goods-title">
                             <div class="form-key">
@@ -175,21 +165,13 @@
                             </div>
                         </div>
                         
-                           <div class="form-item m">
-                            <div class="form-key">
-                                <span>分类</span>
-                            </div>
-                            <div class="form-value">
-                                <div class="form-input-wr">
-                                    <input id="cat" name="cat" value="" type="text">
-                                    </div>
-                            </div>
-                        </div>
+                          
 
                         <!--选择分类信息 -->
                         <div class="form-item m goods-cat">
                             <div class="form-key">
                                 <span>分类</span>
+                                <input id="category-value" type="hidden" name="catvalue" value="">
                             </div>
                              <div class="form-value">
                                 <div class="form-input-wr">
@@ -265,7 +247,7 @@
 		<option value="1001">摄影</option> 
 		<option value="1002">绘画</option> 		
    </select>
-							   <INPUT TYPE="button" VALUE="点我" ONCLICK="getSelectValue();">
+							   <!-- <INPUT TYPE="button" VALUE="点我" ONCLICK="getSelectValue();"> -->
 							    </div>
                             </div>
                         </div> 
@@ -274,9 +256,9 @@
                         
                     </div>
                     
-                   
-                    <button type="button" class="form-submit" onclick="productrelease();">马上发布</button>
+                   	<input   class="form-submit" type="submit" value="上传" />
                   </div>
+                  </form>
             </div>
         </div>
 

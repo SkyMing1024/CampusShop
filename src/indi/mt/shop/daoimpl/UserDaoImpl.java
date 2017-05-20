@@ -66,6 +66,12 @@ public class UserDaoImpl extends BaseDao<User>implements UserDao {
 		return query(sql, id,pwd);
 	}
 
+	
+	public void addPointByReleaseProduct(String uid){
+		String sql="UPDATE `user` u  SET point = point+5  WHERE u.id =  ?";
+		update(sql, uid);
+	}
+	
 	public void addPointByRefresh(String pid){
 		String sql="UPDATE `user` u ,products p SET point = point+2  WHERE u.id = p.beloneto AND p.pid = ?";
 		update(sql, pid);
@@ -77,9 +83,5 @@ public class UserDaoImpl extends BaseDao<User>implements UserDao {
 		update(sql, pid);
 	}
 
-	@Override
-	public void addPointByRealsePro(String pid) {
-		String sql="UPDATE `user` u ,products p SET point = point+2  WHERE u.id = p.beloneto AND p.pid = ?";
-		update(sql, pid);
-	}
+	
 }

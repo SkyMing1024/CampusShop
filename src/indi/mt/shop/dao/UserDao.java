@@ -26,7 +26,7 @@ public interface UserDao {
 	
 	void addPointBySell(String pid);
 	
-	void addPointByRealsePro(String pid);
+	void addPointByReleaseProduct(String uid);
 	
 	void deleteUserById(int id);
 }

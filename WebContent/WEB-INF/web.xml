@@ -144,16 +144,7 @@
     <servlet-name>OrderServlet</servlet-name>
     <url-pattern>/order</url-pattern>
   </servlet-mapping>
-  <servlet>
-    <description></description>
-    <display-name>RealseProductServlet</display-name>
-    <servlet-name>RealseProductServlet</servlet-name>
-    <servlet-class>indi.mt.shop.servlet.RealseProductServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>RealseProductServlet</servlet-name>
-    <url-pattern>/realseproduct</url-pattern>
-  </servlet-mapping>
+  
   <servlet>
     <description></description>
     <display-name>UserEditServlet</display-name>
@@ -163,5 +154,15 @@
   <servlet-mapping>
     <servlet-name>UserEditServlet</servlet-name>
     <url-pattern>/useredit</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>TestUpLoadServlet</display-name>
+    <servlet-name>TestUpLoadServlet</servlet-name>
+    <servlet-class>indi.mt.shop.test.TestUpLoadServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>TestUpLoadServlet</servlet-name>
+    <url-pattern>/testUpLoadServlet</url-pattern>
   </servlet-mapping>
 </web-app>

@@ -35,6 +35,10 @@ $("#buy-button").click(function(){
 		window.location.href="login.jsp";
 	}else{
 		alert("请您联系卖家购买商品。"+"\n"+"电话:"+proInfo.tel+"\n"+"QQ:"+proInfo.qq);
+		/* $("#contact-saler").html("");
+		$("#contact-saler").append('<div class="name"><span>联系方式</span></div> '+
+				' <div class="value">手机：<span class="user-num"id="user_tel" ">'+resp.tel+'</span>'+
+				' &nbsp;&nbsp;QQ:&nbsp;<span class="user-num"id="user_qq">'+resp.qq+'</span></div>') */
 	}
 })
 

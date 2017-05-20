@@ -42,7 +42,7 @@ function inituser(id){
 		$("#userpoint").html('<p>'+resp.point+'</p>')
 		
 		$("#user_photo").html('<img id="origin_ph" src="imgs/'+photo+'" alt="大头像"> '+
-          ' <img id="change_ph" src="imgs/person_hover.png" alt="更换头像" style="display: none;">')
+          ' <img id="change_photo" src="imgs/person_hover.png" alt="更换头像" style="display: none;">')
           
 		$("#user_big_name").html('<p>'+name+'</p>');
 		$("#my_info").append(myinfo);
@@ -69,7 +69,7 @@ function inituserpros(uid){
 					'<span class="enshrine_it" onclick="sellout('+resp[i].pid+');">确认售出</span>'+
 					'<span class="enshrine_it make_edition" onclick="offshelf('+resp[i].pid+');">下架</span>'+
 					'<span class="enshrine_it make_edition" onclick="refresh('+resp[i].pid+');">擦亮</span>'+
-	                '<a href="#" target="_top"><span class="enshrine_it  make_edition">编辑</span></a> '+
+	                '<a href="product_release.jsp?pid='+resp[i].pid+'" target="_top"><span class="enshrine_it  make_edition">编辑</span></a> '+
 	                '</div></div><a href="product_detail.jsp?pid='+resp[i].pid+'">'+
 	                '<img class="enshr_ph" src="'+resp[i].pimage+'" alt="'+resp[i].pname+'"></a></div>')
 			}

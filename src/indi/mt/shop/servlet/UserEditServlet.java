@@ -27,7 +27,6 @@ public class UserEditServlet extends HttpServlet {
 		String college = request.getParameter("college");
 		String grade = request.getParameter("grade");
 		String area = request.getParameter("area");
-		System.out.println("name:"+name);
 		user.setName(name);
 		user.setTel(tel);
 		user.setQq(qq);

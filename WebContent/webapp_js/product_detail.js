@@ -42,7 +42,7 @@ function initProductWithUserInfo(){
 					'<div class="value"><span class="real-time"id="creat_time">'+resp.creatTime+'</span></div></li>'
 					
 			).after(
-					' <li class="ershou-tel"><div class="name"><span>联系方式</span></div> '+
+					' <li class="ershou-tel" id="contact-saler"><div class="name"><span>联系方式</span></div> '+
 					' <div class="value">手机：<span class="user-num"id="user_tel" ">'+tel+'********</span>'+
 					' &nbsp;&nbsp;QQ:&nbsp;<span class="user-num"id="user_qq">'+qq+'*****</span></div></li>' 
 			).after(

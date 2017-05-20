@@ -15,6 +15,11 @@ public class ProductListService {
 	
 	static ProductWithUserInfoDaoImpl productWithUserInfoDaoImpl= new ProductWithUserInfoDaoImpl();
 	
+	
+	public void addProduct(Product product){
+		productDaoImpl.addProduct(product);
+	}
+	
 	//阅读次数+1
 	public void addReadTimes(String pid) {
 		productDaoImpl.addReadTimes(pid);
