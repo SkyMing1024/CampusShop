@@ -16,6 +16,10 @@ public class ProductListService {
 	static ProductWithUserInfoDaoImpl productWithUserInfoDaoImpl= new ProductWithUserInfoDaoImpl();
 	
 	
+	public void  updateProduct(Product product) {
+		productDaoImpl.updateProduct(product);
+	}
+	
 	public void addProduct(Product product){
 		productDaoImpl.addProduct(product);
 	}

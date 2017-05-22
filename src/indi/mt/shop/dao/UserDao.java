@@ -29,4 +29,6 @@ public interface UserDao {
 	void addPointByReleaseProduct(String uid);
 	
 	void deleteUserById(int id);
+
+	void  addUserStatePhoto(User user);
 }

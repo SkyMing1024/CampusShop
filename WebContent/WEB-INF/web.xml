@@ -144,7 +144,6 @@
     <servlet-name>OrderServlet</servlet-name>
     <url-pattern>/order</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <description></description>
     <display-name>UserEditServlet</display-name>
@@ -164,5 +163,15 @@
   <servlet-mapping>
     <servlet-name>TestUpLoadServlet</servlet-name>
     <url-pattern>/testUpLoadServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>UserConfirmServlet</display-name>
+    <servlet-name>UserConfirmServlet</servlet-name>
+    <servlet-class>indi.mt.shop.servlet.UserConfirmServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UserConfirmServlet</servlet-name>
+    <url-pattern>/userconfirm</url-pattern>
   </servlet-mapping>
 </web-app>

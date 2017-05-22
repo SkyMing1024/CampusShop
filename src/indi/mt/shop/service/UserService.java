@@ -8,6 +8,10 @@ public class UserService {
 	static UserDaoImpl userDaoImpl = new UserDaoImpl();
 	
 	
+	public void  addUserStatePhoto(User user) {
+		userDaoImpl.addUserStatePhoto(user);
+	}
+	
 	public void  updateUserInfo(User user) {
 		userDaoImpl.updateUser(user);
 	}

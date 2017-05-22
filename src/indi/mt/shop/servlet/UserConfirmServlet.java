@@ -22,13 +22,13 @@ import indi.mt.shop.service.UserService;
 /**
  * Servlet implementation class ProductReleaseServlet
  */
-public class ProductReleaseServlet extends HttpServlet {
+public class UserConfirmServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     
 
 	// 上传文件存储目录
-    private static final String UPLOAD_DIRECTORY = "imgs_products";
+    private static final String UPLOAD_DIRECTORY = "userconfirmphoto";
  
     // 上传配置
     private static final int MEMORY_THRESHOLD   = 1024 * 1024 * 3;  // 3MB
@@ -40,12 +40,7 @@ public class ProductReleaseServlet extends HttpServlet {
      */
     protected void doPost(HttpServletRequest request,
 		HttpServletResponse response) throws ServletException, IOException {
-		String pname = null;
-		String pdesc = null;
-		String buyPrice = null;
-		String salePrice =null;
-		String cid2 = null;
-		String pid = null;
+		String uid = null;
     	
 		// 检测是否为多媒体上传
 		if (!ServletFileUpload.isMultipartContent(request)) {
@@ -76,7 +71,8 @@ public class ProductReleaseServlet extends HttpServlet {
 
         // 构造临时路径来存储上传的文件
         // 这个路径相对当前应用的目录
-        String uploadPath = request.getServletContext().getRealPath("/") + UPLOAD_DIRECTORY;
+        //String uploadPath = request.getServletContext().getRealPath("/") + UPLOAD_DIRECTORY;
+        String uploadPath = "F:\\eclipse1234WorkSpace\\storagepath"+ File.separator + UPLOAD_DIRECTORY;
          
         // 如果目录不存在则创建
         File uploadDir = new File(uploadPath);
@@ -106,20 +102,10 @@ public class ProductReleaseServlet extends HttpServlet {
                         request.setAttribute("message",
                             "文件上传成功!");
                     }else {
-                    	if(item.getFieldName().equals("title")){
-                    		pname = item.getString("UTF-8");
-                    	}else if (item.getFieldName().equals("desc")) {
-                    		pdesc = item.getString("UTF-8");
-						}else if (item.getFieldName().equals("buyPrice")) {
-							buyPrice = item.getString("UTF-8");
-						}else if (item.getFieldName().equals("salePrice")) {
-							salePrice = item.getString("UTF-8");
-						}else if (item.getFieldName().equals("catvalue")) {
-							cid2 = item.getString("UTF-8");
-						}else if (item.getFieldName().equals("pid")) {
-							pid = item.getString("UTF-8");
-						}
-					}
+                    	if(item.getFieldName().equals("uid")){
+                    		uid = item.getString("UTF-8");
+                    	}
+                    }
                 }
             }
         } catch (Exception ex) {
@@ -129,23 +115,10 @@ public class ProductReleaseServlet extends HttpServlet {
         
         request.setCharacterEncoding("utf-8");
 		User user = (User) request.getSession().getAttribute("user");
-		String pimage = "imgs_products/"+fileName;
-		Product product = new Product(pid, pname, 
-				Double.parseDouble(buyPrice),
-				Double.parseDouble(salePrice), pdesc, pimage, user.getId(), Integer.parseInt(cid2), 0, null, null, null);
-		
-		
-		if(pid == null || pid.equals("")){
-			new ProductListService().addProduct(product);
-			new UserService().addPointByReleaseProduct(user.getId());
-			System.out.println("add:"+product);
-		}else {
-			new ProductListService().updateProduct(product);		
-			System.out.println("update:"+product);
-		}
-		
-		
-		
+		//String statephoto = fileName;
+		user.setStatePhoto(fileName);
+		new UserService().addUserStatePhoto(user);
+		System.out.println(user);
 		String url = "user_center.jsp?id="+user.getId();
 		response.sendRedirect(url);
 //        request.getServletContext().getRequestDispatcher(url).forward(

@@ -12,6 +12,22 @@ public class User {
 	private String qq;
 	private String photo;
 	private int point;
+	private String state;
+	private String statePhoto;
+	
+	
+	public String getState() {
+		return state;
+	}
+	public void setState(String state) {
+		this.state = state;
+	}
+	public String getStatePhoto() {
+		return statePhoto;
+	}
+	public void setStatePhoto(String statePhoto) {
+		this.statePhoto = statePhoto;
+	}
 	public int getPoint() {
 		return point;
 	}
@@ -79,7 +95,7 @@ public class User {
 		this.photo = photo;
 	}
 	public User(String id, String email, String password, String name, String area, String college, String grade,
-			String tel, String qQ, String photo,int point) {
+			String tel, String qq, String photo, int point, String state, String statePhoto) {
 		super();
 		this.id = id;
 		this.email = email;
@@ -89,18 +105,20 @@ public class User {
 		this.college = college;
 		this.grade = grade;
 		this.tel = tel;
-		qq = qQ;
+		this.qq = qq;
 		this.photo = photo;
 		this.point = point;
+		this.state = state;
+		this.statePhoto = statePhoto;
 	}
 	public User() {
-		// TODO Auto-generated constructor stub
 	}
 	@Override
 	public String toString() {
 		return "User [id=" + id + ", email=" + email + ", password=" + password + ", name=" + name + ", area=" + area
 				+ ", college=" + college + ", grade=" + grade + ", tel=" + tel + ", qq=" + qq + ", photo=" + photo
-				+  ",point="+point+"]";
+				+ ", point=" + point + ", state=" + state + ", statePhoto=" + statePhoto + "]\n";
 	}
+	
 	
 }

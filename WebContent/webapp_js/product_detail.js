@@ -1,8 +1,6 @@
 $(function(){
 	initProductWithUserInfo();
 	
-	
-	
 })
 
 var proInfo;
@@ -55,8 +53,8 @@ function initProductWithUserInfo(){
                     ' <span id="user_grade"></span></div></li>'
 			).after(
 					'<li class="ershou-seller"> <div class="name"><span>卖家</span></div> '+
-                    ' <a href="#" target="_top"><div class="value"> '+
-                    ' <span class="value-name" id="userid">'+resp.name+'</span></div></a></li>'		
+                    ' <div class="value"><span class="value-name" id="userid">'+resp.name+'  '+resp.state+'</span></div>' +
+                    '</li>'		
 			)
 			
 			$("div[class='ershou-desc']").append(

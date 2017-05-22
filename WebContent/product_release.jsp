@@ -52,9 +52,41 @@
 				   });
 
 			   });
-			   
 			   $("#cid").change();
+			   if(pid){
+				   initProducToEdit();
+			   
+			   }
 			});
+			
+			function getUrlParam(name) {
+			            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+			            var r = window.location.search.substr(1).match(reg);  //匹配目标参数
+			            if (r != null) return unescape(r[2]); 
+			            return null; //返回参数值
+			        }
+			var pid = getUrlParam('pid');
+			
+			
+			function initProducToEdit(){
+				$("#pid").val(pid);
+				$.ajax({
+					type:"POST",
+					url:"productServlet",
+					dataType:"json",
+					data:{"pid":pid},
+					success:function(resp){
+						if(resp){
+						$("#title").val(resp.pname);					
+						$("#desc").val(resp.pdesc);
+						$("#buyPrice").val(resp.buyPrice);
+						$("#salePrice").val(resp.salePrice);
+						}
+					}
+				})
+			}
+			
+			
 			
 			 /* function getSelectValue(){
 			alert("1级="+$("#cid").val());
@@ -69,7 +101,7 @@
 			
 			
 			
-			function productrelease(){
+			/* function productrelease(){
 				var cid2=0;
 				var pname=$("#title").val(),
 					pdesc=$("#desc").val(),
@@ -90,7 +122,6 @@
 				            buyPrice : buyPrice,
 				            salePrice : salePrice,
 				            cid2 : cid2,
-				           
 				        },
 				        function(res) {
 				            res = $.parseJSON(res);
@@ -102,7 +133,7 @@
 				            }
 				        }
 				    );
-			}
+			} */
 </script>		
 </head>
 	
@@ -118,6 +149,7 @@
                 <div class="form-wr">
                     <div class="form-must-wr">
                     	
+                    	<input id="pid" type="hidden" name="pid" value="">
                     	<div class="form-item l goods-title">
                             <div class="form-key">
                                 <span>选择商品图片</span></div>

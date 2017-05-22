@@ -25,8 +25,20 @@ function inituser(id){
 		var college = resp.college;
 		var grade = resp.grade;
 		var area = resp.area;
-		var myinfo=$('<div id="account_info"><h2>账户信息</h2><ul class="infos"><li>账号</li> '+
-		'<li class="right_info">'+id+'</li></ul></div><div id="base_info">' +
+		var state = resp.state;
+		var str1 = '<div id="account_info"><h2>账户信息</h2>' +
+				'<ul class="infos" id="userid"><li>账号</li><li class="right_info">'+id+'</li></ul>' +
+			    '<ul class="infos" id="userstate"><li>认证状态</li><li class="right_info">'+state+'</li></ul></div>';
+			    
+		var str2 = '<form action="userconfirm" enctype="multipart/form-data" method="post">' +
+				'<ul class="infos" ><li>上传认证</li><li> <input type="file" name="uploadFile" /></li></ul>' +
+				'<ul class="infos"><li>照片</li> <input  type="submit" value="上传照片" /></ul> ' +
+				'<input id="userconfirmid" type="hidden" name="uid" value="">' +
+				'</form>';
+		
+					
+		
+		var str3 = '<div id="base_info">' +
 		'<h2>基本信息<span id="edit_info">编辑</span><span id="save_info">保存</span></h2>' +
 		'<ul class="infos"><li>昵称</li><li class="right_info"><span id="nickname_span">'+name+'</span><input value="'+name+'" id="nickname"type="text"></li></ul> '+
 		'<ul class="infos"><li>手机</li><li class="right_info"><span id="tel_span">'+tel+'</span><input value="'+tel+'" id="tel"type="text"></li></ul>' +
@@ -34,9 +46,16 @@ function inituser(id){
 		'<ul class="infos"><li>学院</li><li class="right_info"><span id="col_span">'+college+'</span><input value="'+college+'" id="col"type="text"></li></ul>'+ 
 		'<ul class="infos"><li>年级</li><li class="right_info"><span id="grade_span">'+grade+'</span><input value="'+grade+'"id="grade"type="text"></li></ul>'+ 
 		'<ul class="infos"><li>校区</li><li class="right_info"><span id="area_span">'+area+'</span><input value="'+area+'"id="area"type="text" placeholder="青山/黄家湖"></li></ul>'+		
-		'</div> ')
+		'</div> ';
+		var str;
+		if(state=="未认证"){
+			$("#userconfirmid").val(userid);
+			str = str1+str2+str3;
+		}else{
+			str = str1+str3;
+		}
 		
-		//$("#user_photo").html('<img id="origin_ph" src="imgs/'+photo+'" alt="大头像">')
+		var myinfo=$(str);
 		
 		
 		$("#userpoint").html('<p>'+resp.point+'</p>')
@@ -123,7 +142,6 @@ function refresh(pid){
 		        	
 		        	alert("恭喜！您已擦亮商品！")
 		            location.reload();
-		            l
 		        } else {
 		        	alert("对不起，擦亮失败，请重试")
 		        }
@@ -142,7 +160,6 @@ function sellout(pid){
 		        	
 		        	alert("恭喜！您又售出一个商品！")
 		            location.reload();
-		            l
 		        } else {
 		        	alert("售出失败，请重试")
 		        }

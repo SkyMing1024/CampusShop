@@ -70,7 +70,7 @@ public class Test {
 	
 	@org.junit.Test
 	public void  testGetUser(){
-		User user = new UserService().getUserById("201322146107");
+		List<User> user = new  UserDaoImpl().getUsers();
 		System.out.println(user);
 	}
 	
